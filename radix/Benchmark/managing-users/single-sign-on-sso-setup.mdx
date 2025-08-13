@@ -1,222 +1,160 @@
 ---
-description: Single SignOn is a convenient authentication method that allows your
-  team members to access their Radix products without entering a password Your organizatio...
-title: Single Sign-On (SSO) Setup
+description: "Single SignOn is a convenient authentication method that allows your team members to access their Radix products without entering a password Your organizatio..."
+title: "Single Sign-On (SSO) Setup"
 ---
 
-Single Sign-On is a convenient authentication method that allows your team members to access their Radix product(s) without entering a password. Your organization can enable SSO by integrating Radix with the internal user management systems outlined below. 
-
-
+<Card title="Single Sign-On"> SSO is a convenient authentication method that allows your team members to access their Radix product(s) without entering a password. Your organization can enable SSO by integrating Radix with the internal user management systems outlined below.</Card> 
 
 Please Note:
 
-
 Single Sign-On can only be configured for users with a personal work email address. Generic or group email addresses are not supported. 
-
-
 
 #### Benefits of Single Sign-On (SSO)
 
-
-* **Enhanced Security:** SSO may reduce the risk of security breaches caused by weak or reused passwords. Additionally, IT administrators can easily add or revoke access as needed, in case of employee turnover.
-* **Compliance Adherence:** SSO may facilitate better compliance with your security and privacy regulations by strengthening authentication measures and control over user access.
-* **Improved Experience:**Save your teams the hassle of remembering yet another password so they can focus on unlocking data insights vs. unlocking their account.
-
+- **Enhanced Security:** SSO may reduce the risk of security breaches caused by weak or reused passwords. Additionally, IT administrators can easily add or revoke access as needed, in case of employee turnover.
+- **Compliance Adherence:** SSO may facilitate better compliance with your security and privacy regulations by strengthening authentication measures and control over user access.
+- \*\*Improved Experience:\*\*Save your teams the hassle of remembering yet another password so they can focus on unlocking data insights vs. unlocking their account.
 
 #### How it Works
 
-
-Interested in setting up SSO? Contact [support@radix.com](mailto:support@radix.com) to get started! Once your organization has confirmed they want to enable SSO, our dedicated support team will assist you in completing the steps below to enable it for your organization. 
-
+Interested in setting up SSO? Contact [support@radix.com](mailto:support@radix.com) to get started\! Once your organization has confirmed they want to enable SSO, our dedicated support team will assist you in completing the steps below to enable it for your organization. 
 
 <Steps>
-  <Step title="**Confirm Your User Management System:** Our support team will coordinate with you to confirm the type of internal user management system your organization is using (i.e., Azure, Okta, G-Suite).">
+  <Step title="Confirm Your User Management System">
+    Our support team will coordinate with you to confirm the type of internal user management system your organization is using (i.e., Azure, Okta, G-Suite).
   </Step>
-  <Step title="**Configure Your SSO:** Use the step-by-step instructions outlined below to configure SSO for using your organization's user management system.">
+  <Step title="Configure Your SSO">
+    Use the step-by-step instructions outlined below to configure SSO for using your organization's user management system.
   </Step>
-  <Step title="**Test SSO for Functionality:** For testing purposes, once the SSO tile has been set up, our support team will enable SSO for your IT team. This is used as an opportunity to confirm you will be able to login successfully prior to rolling out the SSO functionality to your entire organization.">
+  <Step title="Test SSO for Functionality:">
+    For testing purposes, once the SSO tile has been set up, our support team will enable SSO for your IT team. This is used as an opportunity to confirm you will be able to login successfully prior to rolling out the SSO functionality to your entire organization.
   </Step>
-  <Step title="**Provide a Date for SSO Rollout:** Our support team will work with you to confirm the date you'd like SSO to be enabled for your entire organization.">
+  <Step title="Provide a Date for SSO Rollout">
+    Our support team will work with you to confirm the date you'd like SSO to be enabled for your entire organization.
   </Step>
-  <Step title="**Email Your Teams:** Use the email template provided below to help prepare your teams for the upcoming change.">
+  <Step title="Email Your Teams">
+    Use the email template provided below to help prepare your teams for the upcoming change.
   </Step>
-  <Step title="**SSO is Enabled:** Only after receiving confirmation of the desired "go-live" date from you, our support team will enable SSO for your entire organization.">
+  <Step title="SSO is Enabled">
+    Only after receiving confirmation of the desired go-live date from you, our support team will enable SSO for your entire organization.
   </Step>
 </Steps>
 
-
 #### Configuring Your SSO
 
-
 The steps you'll take to configure your SSO will vary based on the system in use by your organization. 
-
-
-
 
 **Google Workspace (aka "G-Suite")**
 
 In order to provide Radix SSO capabilities to your users, Google's authentication API must be accessed. This will allow your system to verify users before redirecting them to your company's unique Radix subdomain.
 
-
 To access Google's authentication endpoint you will need to create an app for Radix, then generate a Client ID and Client Secret. You can follow the steps below to do so. 
 
+**Step 1:** Log in to your administrator account at [https://console.developers.google.com](https://console.developers.google.com/apis/credentials/)
 
-**Step 1:** Log in to your administrator account at [https://console.developers.google.com](https://console.developers.google.com/apis/credentials/ "https://console.developers.google.com/apis/credentials/")
+**Step 2:** Click _Create Project_
 
-
-**Step 2:** Click *Create Project*
-
-
-*![Create Project.png](/images/radix/9d76aae7a00c8d7eba38c7f283a8746f980bd46d.png)*
-
-
-**Step 3:** Enter a *Project Name*. Then, use the *Location* field to locate the appropriate *Organization* option (this will likely be "radix.com" or "biradix.com").
-
+**Step 3:** Enter a _Project Name_. Then, use the _Location_ field to locate the appropriate _Organization_ option (this will likely be "radix.com" or "biradix.com").
 
 <Frame>
-  <img src="/images/radix/eb7fc4d6371659f51959a84806b06e1936b2fc7f.png" alt="Project Name.png" />
+  ![Project Name.png](/images/radix/eb7fc4d6371659f51959a84806b06e1936b2fc7f.png)
 </Frame>
 
+**Step 4:** Click _Create_ and await the project's creation.
 
-**Step 4:** Click C*reate* and await the project's creation.
-
-
-**Step 5:** Once your project has been created, navigate to the *OAuth Consent Screen* and ensure the User Type is set to *External*. If your organization has multiple apps, make sure the newly created app for Radix is in use for this step. 
-
+**Step 5:** Once your project has been created, navigate to the _OAuth Consent Screen_ and ensure the User Type is set to _External_. If your organization has multiple apps, make sure the newly created app for Radix is in use for this step. 
 
 <Frame>
-  <img src="/images/radix/f762ed7541962dd4ff379fd433ae5972606c46e1.png" alt="OAuth Step.png" />
+  ![OAuth Step.png](/images/radix/f762ed7541962dd4ff379fd433ae5972606c46e1.png)
 </Frame>
 
-
-**Step 6:** Navigate to the *Credentials* page and ensure the authorized redirect URLs are set to <https://api.biradix.com/api/1.0/users/sso/gsuite> 
-
+**Step 6:** Navigate to the _Credentials_ page and ensure the authorized redirect URLs are set to https://api.biradix.com/api/1.0/users/sso/gsuite
 
 <Frame>
-  <img src="/images/radix/c26c28274f9448626bd5a63310032f1089aa2173.png" alt="Credentials.png" />
+  ![Credentials.png](/images/radix/c26c28274f9448626bd5a63310032f1089aa2173.png)
 </Frame>
-
-
 
 #### Please Note
 
-
 The Client ID and Client Secret should be sent to Radix in order to complete the SSO setup and move on to testing it's functionality. 
-
-
-
-
-
 
 **Okta**
 
 Configure SSO for Radix within your Okta Admin Portal using the steps outlined below. Integration is done through OAuth/Open ID Connect standard. 
 
-
-**Step 1:** Log in to your Okta Admin portal, and click *Add Application* from the Applications tab. 
-
+**Step 1:** Log in to your Okta Admin portal, and click _Add Application_ from the Applications tab. 
 
 <Frame>
-  <img src="/images/radix/68ef637c50b948535c63df6261a7ec255402ac35.png" alt="Add Application.png" />
+  ![Add Application.png](/images/radix/68ef637c50b948535c63df6261a7ec255402ac35.png)
 </Frame>
 
-
-**Step 2:** Select *Web Application* from the options provided. 
-
+**Step 2:** Select _Web Application_ from the options provided. 
 
 <Frame>
-  <img src="/images/radix/1ca578fe2b48dad6846600aedd2b0bd13d1b22a8.png" alt="Web Application.png" />
+  ![Web Application.png](/images/radix/1ca578fe2b48dad6846600aedd2b0bd13d1b22a8.png)
 </Frame>
-
 
 **Step 3:** Fill out the Application Settings using the following guidelines:
 
-
-* *Name* the application (Ex: “Radix”)
-* *Base URIs* = blank
-* *Login redirect URIs* = API URL (Ex: “https://api.biradix.com/api/1.0/users/sso/okta”)
-* *Logout redirect URIs* = blank
-* *Group assignments* = the group of users that will need Radix access (Ex: “Everyone”)
-* *Grant type allowed* = Authorization Code & Implicit (Hybrid)
-
+- _Name_ the application (Ex: “Radix”)
+- _Base URIs_ = blank
+- _Login redirect URIs_ = API URL (Ex: “https://api.biradix.com/api/1.0/users/sso/okta”)
+- _Logout redirect URIs_ = blank
+- _Group assignments_ = the group of users that will need Radix access (Ex: “Everyone”)
+- _Grant type allowed_ = Authorization Code & Implicit (Hybrid)
 
 <Frame>
-  <img src="/images/radix/3abbe3bc94a2b973aeedf099e6c3d25cba5bc96d.png" alt="Application Settings.png" />
+  ![Application Settings.png](/images/radix/3abbe3bc94a2b973aeedf099e6c3d25cba5bc96d.png)
 </Frame>
 
+\*\*Step 4:\*\*Once the application has been created, you will be taken to the _General_ tab of that app. Please send the following information to the Radix support team member you've been working with:
 
-**Step 4:**Once the application has been created, you will be taken to the *General* tab of that app. Please send the following information to the Radix support team member you've been working with:
+- Client ID (Ex: “0oafga3uiAzGeExp5021”)
+- Client secret (Ex: '3HQgmS4iJa1WClqy-KRruJWgmgpiKE89HnJXagqF”)
+- Okta domain (Ex: “https://companyname.okta.com”)
 
+**Step 5:** From the General tab of the app, click _Edit_ to update the default setting values using the following guidelines:
 
-* Client ID (Ex: “0oafga3uiAzGeExp5021”)
-* Client secret (Ex: '3HQgmS4iJa1WClqy-KRruJWgmgpiKE89HnJXagqF”)
-* Okta domain (Ex: “https://companyname.okta.com”)
-
-
-**Step 5:** From the General tab of the app, click *Edit* to update the default setting values using the following guidelines:
-
-
-* *Login initiated by* = “Either Okta or App”
-
-
-	+ Our application uses "Authorization Code" OAuth grant type but checking *Implicit (Hybrid)* is required to enable *Login initiated by* option “Either Okta or App”. Okta won’t show the “Display application icon to users” option otherwise and users won’t see the application on their Okta portal.
-* *Implicit (Hybrid)* = Checked
-* *Initiate login URI* = Radix login url (Ex: “https://testcompany.radix.com”)
-
+- _Login initiated by_ = “Either Okta or App”
+  - Our application uses "Authorization Code" OAuth grant type but checking _Implicit (Hybrid)_ is required to enable _Login initiated by_ option “Either Okta or App”. Okta won’t show the “Display application icon to users” option otherwise and users won’t see the application on their Okta portal.
+- _Implicit (Hybrid)_ = Checked
+- _Initiate login URI_ = Radix login url (Ex: “https://testcompany.radix.com”)
 
 <Frame>
-  <img src="/images/radix/81513a9802c29b9789655c6bff56c595550f3604.png" alt="General Settings.png" />
+  ![General Settings.png](/images/radix/81513a9802c29b9789655c6bff56c595550f3604.png)
 </Frame>
-
-
-
-
 
 **Microsoft Azure**
 
 To configure Radix SSO using Azure, create a tile with Active Directory (AD) and point it to the URL your organization uses to log in to Radix (Ex: [https://company.radix.com](https://company.biradix.com)).
 
+- The application created in Azure is a Linked SSO application and OAuth is used for authentication.
 
-* The application created in Azure is a Linked SSO application and OAuth is used for authentication. ![Linked SSO.png](/images/radix/c6bf424dd3d8b886d376833b443f02b2bbea9744.png)
-* You can click Change Single Sign-On to update the sign-on mode![Linked Mode.png](/images/radix/f5f91dbd4cd3e67dcce6e6e6e85c7a1b8affd86d.png)
+  ![Linked SSO.png](/images/radix/c6bf424dd3d8b886d376833b443f02b2bbea9744.png)
+- You can click Change Single Sign-On to update the sign-on mode
 
+  ![Linked Mode.png](/images/radix/f5f91dbd4cd3e67dcce6e6e6e85c7a1b8affd86d.png)
+- If possible, we recommend adding consent to the app to avoid your teams from getting a second confirmation prompt.
 
-* If possible, we recommend adding consent to the app to avoid your teams from getting a second confirmation prompt. ![Change Permissions.png](/images/radix/4265ce190ff8123b4f7b0f01b78b579e36ca583f.png)
-
-
+  ![Change Permissions.png](/images/radix/4265ce190ff8123b4f7b0f01b78b579e36ca583f.png)
 
 #### Please Note
 
-
 When creating your tile, our registered app tile may appear as a secondary tile due to the SSO triggering our registered app to appear in your AD. You can go into AD and change the tile's visibility settings.
 
-
-
-
-
-
-
-#### 
- Email Template for SSO Communication
-
+#### Email Template for SSO Communication
 
 **Subject Line:** Single Sign-On (SSO) Enabled for Radix Starting [ENTER DATE]
 
+**Email Body:** We are excited to announce the implementation of _Single Sign-On (SSO) for Radix. Starting on [ENTER DATE], you will no longer need to enter your password to access the Radix platform. We're making this change to improve security and add convenience to your day by reducing the number of passwords you need to manage._
 
-**Email Body:** We are excited to announce the implementation of *Single Sign-On (SSO) for Radix. Starting on [ENTER DATE], you will no longer need to enter your password to access the Radix platform. We're making this change to improve security and add convenience to your day by reducing the number of passwords you need to manage.*
+_As of [ENTER DATE] to log in to Radix:_
 
+- _Visit [ENTER YOUR COMPANY'S UNIQUE RADIX DOMAIN]_
+- _Enter your User Name_
 
-*As of [ENTER DATE] to log in to Radix:*
+\_\*Note: If you are using the domain \_[_https://platform.biradix.com_](https://platform.biradix.com/) _to log in, it will no longer work. You must access Radix via our company's unique domain above._
 
+[___We understand that this may take some getting used to so if you have any questions or encounter any issues logging into our platform, please don't hesitate to reach out to your IT department or Radix Support at support@radix.com.___](mailto:support@radix.com)
 
-* *Visit [ENTER YOUR COMPANY'S UNIQUE RADIX DOMAIN]*
-* *Enter your User Name*
-
-
-*\*Note: If you are using the domain*[*https://platform.biradix.com*](https://platform.biradix.com/ "https://platform.biradix.com/") *to log in, it will no longer work. You must access Radix via our company's unique domain above.*
-
-
-*We understand that this may take some getting used to so if you have any questions or encounter any issues logging into our platform, please don't hesitate to reach out to your IT department or Radix Support at*[*support@radix.com*](mailto:support@radix.com "mailto:support@radix.com")*.* 
-
-
-*Thank you.*
+_Thank you._
