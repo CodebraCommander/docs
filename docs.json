@@ -34,27 +34,32 @@
                                                                      ]
                                                        },
                                                        {
-                                                           "group":  "Realrents",
+                                                           "group":  "RealRents",
                                                            "pages":  [
-                                                                         "radix/realrents/general/phase-1-validation-test-article",
-                                                                         "radix/realrents/general/phase-1-validation-test-article-755-7338",
-                                                                         "radix/realrents/general/test-article"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Research",
-                                                           "pages":  [
-                                                                         "radix/research/10-questions-operators-can-answer-with-radix-resea",
-                                                                         "radix/research/available-research-markets",
-                                                                         "radix/research/construction-pipeline-dashboard",
-                                                                         "radix/research/construction-pipeline-video",
-                                                                         "radix/research/employment-dashboard",
-                                                                         "radix/research/housing-affordability-dashboard",
-                                                                         "radix/research/market-snapshot",
-                                                                         "radix/research/market-snapshot-and-trends-video",
-                                                                         "radix/research/market-trends",
-                                                                         "radix/research/overview-of-radix-research-video",
-                                                                         "radix/research/rent-and-operating-trends-video"
+                                                                         "radix/realrents/fees-deposits-and-concessions/how-to-add-and-manage-fees-and-deposits-in-realren",
+                                                                         "radix/realrents/fees-deposits-and-concessions/how-to-update-concessions-in-realrents",
+                                                                         "radix/realrents/fees-deposits-and-concessions/realrents-video-tutorials-fees-and-deposits",
+                                                                         "radix/realrents/general/data-quality-score-explained",
+                                                                         "radix/realrents/general/embedding-realrents-calculator-on-your-property-we",
+                                                                         "radix/realrents/general/locked-properties",
+                                                                         "radix/realrents/general/property-update-reminder-emails",
+                                                                         "radix/realrents/general/realrents-overview",
+                                                                         "radix/realrents/general/shared-competitors",
+                                                                         "radix/realrents/general/understanding-clock-colors",
+                                                                         "radix/realrents/general/understanding-verified-and-not-verified-property-s",
+                                                                         "radix/realrents/general/updating-competitor-surveys",
+                                                                         "radix/realrents/general/web-scraped-property-survey-data",
+                                                                         "radix/realrents/managing-listings/how-to-edit-amenities-in-realrents",
+                                                                         "radix/realrents/managing-listings/how-to-manage-property-information-in-realrents",
+                                                                         "radix/realrents/managing-listings/how-to-upload-and-manage-property-photos-in-realre",
+                                                                         "radix/realrents/managing-listings/managing-listings-overview",
+                                                                         "radix/realrents/managing-listings/understanding-the-integrations-tab-in-realrents",
+                                                                         "radix/realrents/updating-your-market-survey-now-on-realrents/locked-properties",
+                                                                         "radix/realrents/updating-your-market-survey-now-on-realrents/property-update-reminder-emails",
+                                                                         "radix/realrents/updating-your-market-survey-now-on-realrents/shared-competitors",
+                                                                         "radix/realrents/updating-your-market-survey-now-on-realrents/understanding-clock-colors",
+                                                                         "radix/realrents/updating-your-market-survey-now-on-realrents/updating-competitor-surveys",
+                                                                         "radix/realrents/updating-your-market-survey-now-on-realrents/web-scraped-property-survey-data"
                                                                      ]
                                                        },
                                                        {
@@ -64,6 +69,94 @@
                                                                          "radix/api/benchmark-api-overview",
                                                                          "radix/api/getting-your-api-key",
                                                                          "radix/api/introduction-to-radix-api"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Benchmark",
+                                                           "pages":  [
+                                                                         "radix/Benchmark/customizing-reports/customize-property-report-preferences-video",
+                                                                         "radix/Benchmark/customizing-reports/customizing-reports-with-my-reports",
+                                                                         "radix/Benchmark/customizing-reports/my-report-and-organization-templates",
+                                                                         "radix/Benchmark/customizing-reports/notifications-and-status-update",
+                                                                         "radix/Benchmark/customizing-reports/perspectives-use-in-reporting-video",
+                                                                         "radix/Benchmark/customizing-reports/scatter-plot",
+                                                                         "radix/Benchmark/customizing-reports/standardizing-reporting-with-an-organization-templ",
+                                                                         "radix/Benchmark/data-dictionary/apartments-to-rent-atr",
+                                                                         "radix/Benchmark/data-dictionary/calculating-integrated-property-survey-values",
+                                                                         "radix/Benchmark/data-dictionary/closing-ratio",
+                                                                         "radix/Benchmark/data-dictionary/concessions",
+                                                                         "radix/Benchmark/data-dictionary/concessions-index",
+                                                                         "radix/Benchmark/data-dictionary/how-radix-calculates-rents",
+                                                                         "radix/Benchmark/data-dictionary/leased-percentage",
+                                                                         "radix/Benchmark/data-dictionary/leases-per-week",
+                                                                         "radix/Benchmark/data-dictionary/net-effective-rent-ner",
+                                                                         "radix/Benchmark/data-dictionary/occupancy-percentage",
+                                                                         "radix/Benchmark/data-dictionary/property-benchmark-terminology-and-formulas-video",
+                                                                         "radix/Benchmark/data-dictionary/property-surveys-terminology-and-formulas-video",
+                                                                         "radix/Benchmark/data-dictionary/radix-learning-resources",
+                                                                         "radix/Benchmark/data-dictionary/rent",
+                                                                         "radix/Benchmark/data-dictionary/revenue-per-available-unit-revpau",
+                                                                         "radix/Benchmark/data-dictionary/traffic-per-week",
+                                                                         "radix/Benchmark/evaluating-your-portfolio-s-performance/benchmark-portfolio-dashboard",
+                                                                         "radix/Benchmark/evaluating-your-portfolio-s-performance/filtering-your-portfolio-dashboard",
+                                                                         "radix/Benchmark/evaluating-your-portfolio-s-performance/how-to-create-or-edit-perspectives-video",
+                                                                         "radix/Benchmark/evaluating-your-portfolio-s-performance/how-to-use-perspectives",
+                                                                         "radix/Benchmark/evaluating-your-portfolio-s-performance/perspectives-overview-video",
+                                                                         "radix/Benchmark/evaluating-your-portfolio-s-performance/portfolio-benchmark-snapshot-video",
+                                                                         "radix/Benchmark/evaluating-your-portfolio-s-performance/portfolio-benchmark-trends-video",
+                                                                         "radix/Benchmark/evaluating-your-portfolio-s-performance/properties-to-review",
+                                                                         "radix/Benchmark/managing-properties/adding-a-property-to-benchmark",
+                                                                         "radix/Benchmark/managing-properties/addingremoving-competitor-properties",
+                                                                         "radix/Benchmark/managing-properties/compmatch-recommended-comps",
+                                                                         "radix/Benchmark/managing-properties/editing-property-floor-plans",
+                                                                         "radix/Benchmark/managing-properties/how-to-edit-property-information",
+                                                                         "radix/Benchmark/managing-properties/how-to-manage-fees-and-deposits",
+                                                                         "radix/Benchmark/managing-properties/managing-property-amenities",
+                                                                         "radix/Benchmark/managing-users/adding-new-users",
+                                                                         "radix/Benchmark/managing-users/how-to-edit-users",
+                                                                         "radix/Benchmark/managing-users/resetting-your-password",
+                                                                         "radix/Benchmark/managing-users/single-sign-on-sso-setup",
+                                                                         "radix/Benchmark/managing-users/updating-your-account-information",
+                                                                         "radix/Benchmark/report-overviews/amenities-report-overview",
+                                                                         "radix/Benchmark/report-overviews/best-rate-comparison-report-overview-beta",
+                                                                         "radix/Benchmark/report-overviews/competitor-summary-report-overview",
+                                                                         "radix/Benchmark/report-overviews/concessions-report-overview",
+                                                                         "radix/Benchmark/report-overviews/construction-pipeline-report-overview",
+                                                                         "radix/Benchmark/report-overviews/fees-deposits-report-overview",
+                                                                         "radix/Benchmark/report-overviews/floor-plan-comparison-report-overview",
+                                                                         "radix/Benchmark/report-overviews/forecast-model-report-overview",
+                                                                         "radix/Benchmark/report-overviews/market-survey-summary-report-overview",
+                                                                         "radix/Benchmark/report-overviews/property-data-report-overview",
+                                                                         "radix/Benchmark/report-overviews/property-ranking-report-overview",
+                                                                         "radix/Benchmark/report-overviews/rent-operating-trends-report-overview",
+                                                                         "radix/Benchmark/report-overviews/reputation-report-overview",
+                                                                         "radix/Benchmark/report-overviews/trend-analysis-report-overview",
+                                                                         "radix/Benchmark/sharing-reports/automate-your-reporting",
+                                                                         "radix/Benchmark/sharing-reports/download-share-save-property-reports-video",
+                                                                         "radix/Benchmark/sharing-reports/how-to-save-export-and-email-reports",
+                                                                         "radix/Benchmark/sharing-reports/schedule-property-report-auto-delivery-video"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Integrations",
+                                                           "pages":  [
+                                                                         "radix/integrations/onesite-integration-setup-guide",
+                                                                         "radix/integrations/property-management-system-pms-integration-overvie",
+                                                                         "radix/integrations/resman-integration-setup-guide",
+                                                                         "radix/integrations/yardi-sipp-integration-setup-guide"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Legacy",
+                                                           "pages":  [
+                                                                         "radix/legacy/adding-concessions-legacy",
+                                                                         "radix/legacy/locked-properties-legacy",
+                                                                         "radix/legacy/property-update-reminder-emails-legacy",
+                                                                         "radix/legacy/shared-competitors-legacy",
+                                                                         "radix/legacy/updating-competitor-surveys-legacy",
+                                                                         "radix/legacy/updating-property-surveys-legacy",
+                                                                         "radix/legacy/viewing-pms-imported-survey-data-legacy",
+                                                                         "radix/legacy/web-scraped-property-survey-data-beta-legacy"
                                                                      ]
                                                        },
                                                        {
@@ -83,177 +176,19 @@
                                                                      ]
                                                        },
                                                        {
-                                                           "group":  "Legacy",
+                                                           "group":  "Research",
                                                            "pages":  [
-                                                                         "radix/legacy/adding-concessions-legacy",
-                                                                         "radix/legacy/locked-properties-legacy",
-                                                                         "radix/legacy/property-update-reminder-emails-legacy",
-                                                                         "radix/legacy/shared-competitors-legacy",
-                                                                         "radix/legacy/updating-competitor-surveys-legacy",
-                                                                         "radix/legacy/updating-property-surveys-legacy",
-                                                                         "radix/legacy/viewing-pms-imported-survey-data-legacy",
-                                                                         "radix/legacy/web-scraped-property-survey-data-beta-legacy"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Managing Users",
-                                                           "pages":  [
-                                                                         "radix/managing-users/adding-new-users",
-                                                                         "radix/managing-users/how-to-edit-users",
-                                                                         "radix/managing-users/resetting-your-password",
-                                                                         "radix/managing-users/single-sign-on-sso-setup",
-                                                                         "radix/managing-users/updating-your-account-information"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Managing Properties",
-                                                           "pages":  [
-                                                                         "radix/managing-properties/adding-a-property-to-benchmark",
-                                                                         "radix/managing-properties/addingremoving-competitor-properties",
-                                                                         "radix/managing-properties/compmatch-recommended-comps",
-                                                                         "radix/managing-properties/editing-property-floor-plans",
-                                                                         "radix/managing-properties/how-to-edit-property-information",
-                                                                         "radix/managing-properties/how-to-manage-fees-and-deposits",
-                                                                         "radix/managing-properties/managing-property-amenities"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Report Overviews",
-                                                           "pages":  [
-                                                                         "radix/report-overviews/amenities-report-overview",
-                                                                         "radix/report-overviews/best-rate-comparison-report-overview-beta",
-                                                                         "radix/report-overviews/competitor-summary-report-overview",
-                                                                         "radix/report-overviews/concessions-report-overview",
-                                                                         "radix/report-overviews/construction-pipeline-report-overview",
-                                                                         "radix/report-overviews/fees-deposits-report-overview",
-                                                                         "radix/report-overviews/floor-plan-comparison-report-overview",
-                                                                         "radix/report-overviews/forecast-model-report-overview",
-                                                                         "radix/report-overviews/market-survey-summary-report-overview",
-                                                                         "radix/report-overviews/property-data-report-overview",
-                                                                         "radix/report-overviews/property-ranking-report-overview",
-                                                                         "radix/report-overviews/rent-operating-trends-report-overview",
-                                                                         "radix/report-overviews/reputation-report-overview",
-                                                                         "radix/report-overviews/trend-analysis-report-overview"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Data Dictionary",
-                                                           "pages":  [
-                                                                         "radix/data-dictionary/apartments-to-rent-atr",
-                                                                         "radix/data-dictionary/calculating-integrated-property-survey-values",
-                                                                         "radix/data-dictionary/closing-ratio",
-                                                                         "radix/data-dictionary/concessions",
-                                                                         "radix/data-dictionary/concessions-index",
-                                                                         "radix/data-dictionary/how-radix-calculates-rents",
-                                                                         "radix/data-dictionary/leased-percentage",
-                                                                         "radix/data-dictionary/leases-per-week",
-                                                                         "radix/data-dictionary/net-effective-rent-ner",
-                                                                         "radix/data-dictionary/occupancy-percentage",
-                                                                         "radix/data-dictionary/property-benchmark-terminology-and-formulas-video",
-                                                                         "radix/data-dictionary/property-surveys-terminology-and-formulas-video",
-                                                                         "radix/data-dictionary/radix-learning-resources",
-                                                                         "radix/data-dictionary/rent",
-                                                                         "radix/data-dictionary/revenue-per-available-unit-revpau",
-                                                                         "radix/data-dictionary/traffic-per-week"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Sharing Reports",
-                                                           "pages":  [
-                                                                         "radix/sharing-reports/automate-your-reporting",
-                                                                         "radix/sharing-reports/download-share-save-property-reports-video",
-                                                                         "radix/sharing-reports/how-to-save-export-and-email-reports",
-                                                                         "radix/sharing-reports/schedule-property-report-auto-delivery-video"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Evaluating Your Portfolio\u0027s Performance",
-                                                           "pages":  [
-                                                                         "radix/evaluating-your-portfolio-s-performance/benchmark-portfolio-dashboard",
-                                                                         "radix/evaluating-your-portfolio-s-performance/filtering-your-portfolio-dashboard",
-                                                                         "radix/evaluating-your-portfolio-s-performance/how-to-create-or-edit-perspectives-video",
-                                                                         "radix/evaluating-your-portfolio-s-performance/how-to-use-perspectives",
-                                                                         "radix/evaluating-your-portfolio-s-performance/perspectives-overview-video",
-                                                                         "radix/evaluating-your-portfolio-s-performance/portfolio-benchmark-snapshot-video",
-                                                                         "radix/evaluating-your-portfolio-s-performance/portfolio-benchmark-trends-video",
-                                                                         "radix/evaluating-your-portfolio-s-performance/properties-to-review"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Evaluating Your Property\u0027s Performance",
-                                                           "pages":  [
-                                                                         "radix/evaluating-your-property-s-performance/benchmark-property-dashboard",
-                                                                         "radix/evaluating-your-property-s-performance/insights-alerts",
-                                                                         "radix/evaluating-your-property-s-performance/insights-dashboard-ratings-key",
-                                                                         "radix/evaluating-your-property-s-performance/property-benchmark-competitors-table-video",
-                                                                         "radix/evaluating-your-property-s-performance/property-benchmark-reputation-map-video",
-                                                                         "radix/evaluating-your-property-s-performance/property-benchmark-snapshot-video",
-                                                                         "radix/evaluating-your-property-s-performance/property-benchmark-trends-video"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Customizing Reports",
-                                                           "pages":  [
-                                                                         "radix/customizing-reports/customize-property-report-preferences-video",
-                                                                         "radix/customizing-reports/customizing-reports-with-my-reports",
-                                                                         "radix/customizing-reports/my-report-and-organization-templates",
-                                                                         "radix/customizing-reports/notifications-and-status-update",
-                                                                         "radix/customizing-reports/perspectives-use-in-reporting-video",
-                                                                         "radix/customizing-reports/scatter-plot",
-                                                                         "radix/customizing-reports/standardizing-reporting-with-an-organization-templ"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "General",
-                                                           "pages":  [
-                                                                         "radix/general/data-quality-score-explained",
-                                                                         "radix/general/embedding-realrents-calculator-on-your-property-we",
-                                                                         "radix/general/locked-properties",
-                                                                         "radix/general/property-update-reminder-emails",
-                                                                         "radix/general/realrents-overview",
-                                                                         "radix/general/shared-competitors",
-                                                                         "radix/general/understanding-clock-colors",
-                                                                         "radix/general/understanding-verified-and-not-verified-property-s",
-                                                                         "radix/general/updating-competitor-surveys",
-                                                                         "radix/general/web-scraped-property-survey-data"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Fees, Deposits, and Concessions",
-                                                           "pages":  [
-                                                                         "radix/fees-deposits-and-concessions/how-to-add-and-manage-fees-and-deposits-in-realren",
-                                                                         "radix/fees-deposits-and-concessions/how-to-update-concessions-in-realrents",
-                                                                         "radix/fees-deposits-and-concessions/realrents-video-tutorials-fees-and-deposits"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Managing Listings",
-                                                           "pages":  [
-                                                                         "radix/managing-listings/how-to-edit-amenities-in-realrents",
-                                                                         "radix/managing-listings/how-to-manage-property-information-in-realrents",
-                                                                         "radix/managing-listings/how-to-upload-and-manage-property-photos-in-realre",
-                                                                         "radix/managing-listings/managing-listings-overview",
-                                                                         "radix/managing-listings/understanding-the-integrations-tab-in-realrents"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Updating Your Market Survey in RealRents",
-                                                           "pages":  [
-                                                                         "radix/updating-your-market-survey-now-on-realrents/locked-properties",
-                                                                         "radix/updating-your-market-survey-now-on-realrents/property-update-reminder-emails",
-                                                                         "radix/updating-your-market-survey-now-on-realrents/shared-competitors",
-                                                                         "radix/updating-your-market-survey-now-on-realrents/understanding-clock-colors",
-                                                                         "radix/updating-your-market-survey-now-on-realrents/updating-competitor-surveys",
-                                                                         "radix/updating-your-market-survey-now-on-realrents/web-scraped-property-survey-data"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Integrations",
-                                                           "pages":  [
-                                                                         "radix/integrations/onesite-integration-setup-guide",
-                                                                         "radix/integrations/property-management-system-pms-integration-overvie",
-                                                                         "radix/integrations/resman-integration-setup-guide",
-                                                                         "radix/integrations/yardi-sipp-integration-setup-guide"
+                                                                         "radix/research/10-questions-operators-can-answer-with-radix-resea",
+                                                                         "radix/research/available-research-markets",
+                                                                         "radix/research/construction-pipeline-dashboard",
+                                                                         "radix/research/construction-pipeline-video",
+                                                                         "radix/research/employment-dashboard",
+                                                                         "radix/research/housing-affordability-dashboard",
+                                                                         "radix/research/market-snapshot",
+                                                                         "radix/research/market-snapshot-and-trends-video",
+                                                                         "radix/research/market-trends",
+                                                                         "radix/research/overview-of-radix-research-video",
+                                                                         "radix/research/rent-and-operating-trends-video"
                                                                      ]
                                                        }
                                                    ]
@@ -262,155 +197,6 @@
                                         "tab":  "redIQ",
                                         "groups":  [
                                                        {
-                                                           "group":  "How to Use the Model",
-                                                           "pages":  [
-                                                                         "rediq/how-to-use-the-model/partnership-structures",
-                                                                         "rediq/how-to-use-the-model/adjustments-and-notes",
-                                                                         "rediq/how-to-use-the-model/advanced-loan-calcs-overview",
-                                                                         "rediq/how-to-use-the-model/bridge-loan-deep-dive",
-                                                                         "rediq/how-to-use-the-model/commercial-component",
-                                                                         "rediq/how-to-use-the-model/customize-model-colors",
-                                                                         "rediq/how-to-use-the-model/customize-model-colors-41475232",
-                                                                         "rediq/how-to-use-the-model/detail-assumptions",
-                                                                         "rediq/how-to-use-the-model/future-value-refinance-deep-dive",
-                                                                         "rediq/how-to-use-the-model/how-to-save-and-print-as-pdf-in-valuationiq-for-ma",
-                                                                         "rediq/how-to-use-the-model/lease-up-module",
-                                                                         "rediq/how-to-use-the-model/preset-assumptions",
-                                                                         "rediq/how-to-use-the-model/roll-up-portfolio-model",
-                                                                         "rediq/how-to-use-the-model/syncing-model-with-the-cloud",
-                                                                         "rediq/how-to-use-the-model/underwrite-without-operating-data",
-                                                                         "rediq/how-to-use-the-model/update-sensitivities-analysis",
-                                                                         "rediq/how-to-use-the-model/valuationiq-proforma-exporting-and-importing"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Best Practices and Tips",
-                                                           "pages":  [
-                                                                         "rediq/best-practices-and-tips/2-way-sync-faq",
-                                                                         "rediq/best-practices-and-tips/best-practices-and-tips",
-                                                                         "rediq/best-practices-and-tips/fix-retrieve-data-error"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Product Release Notes",
-                                                           "pages":  [
-                                                                         "rediq/product-release-notes/2142025",
-                                                                         "rediq/product-release-notes/5282025",
-                                                                         "rediq/product-release-notes/722025"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "SmartMap",
-                                                           "pages":  [
-                                                                         "rediq/smartmap/account-setup",
-                                                                         "rediq/smartmap/how-to-override-or-change-the-sm-mapping",
-                                                                         "rediq/smartmap/overview-and-in-app-experience",
-                                                                         "rediq/smartmap/smartmap-faqs",
-                                                                         "rediq/smartmap/uploading-and-using-smartmap",
-                                                                         "rediq/smartmap/using-sm-to-map-accounts-on-existing-os-uploads",
-                                                                         "rediq/smartmap/using-sm-with-legacy-mappings"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Settings and Admin",
-                                                           "pages":  [
-                                                                         "rediq/settings-and-admin/addmanage-users",
-                                                                         "rediq/settings-and-admin/help",
-                                                                         "rediq/settings-and-admin/logging-in",
-                                                                         "rediq/settings-and-admin/password-recovery"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Operating Statements",
-                                                           "pages":  [
-                                                                         "rediq/operating-statements/aggregate-expense-comp-data",
-                                                                         "rediq/operating-statements/annual-operating-statements",
-                                                                         "rediq/operating-statements/automatically-uploading-operating-statements",
-                                                                         "rediq/operating-statements/below-the-noi-beta",
-                                                                         "rediq/operating-statements/calculated-noi-does-not-match-original-noi",
-                                                                         "rediq/operating-statements/chart-of-accounts",
-                                                                         "rediq/operating-statements/delete-a-batch-of-operating-statements",
-                                                                         "rediq/operating-statements/detailed-chart-of-accounts",
-                                                                         "rediq/operating-statements/manually-uploading-operating-statements",
-                                                                         "rediq/operating-statements/mapping-below-the-noi-beta",
-                                                                         "rediq/operating-statements/mapping-operating-statements",
-                                                                         "rediq/operating-statements/operating-statement-aggregate-analysis",
-                                                                         "rediq/operating-statements/operating-statements",
-                                                                         "rediq/operating-statements/operating-statements-and-property-data-bulk-upload",
-                                                                         "rediq/operating-statements/proforma-vs-actual-user-guide-faqs-beta",
-                                                                         "rediq/operating-statements/rent-occupancy-chart",
-                                                                         "rediq/operating-statements/year-over-year-by-month-chart"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Troubleshooting",
-                                                           "pages":  [
-                                                                         "rediq/troubleshooting/blocked-macros-in-valuationiq-model",
-                                                                         "rediq/troubleshooting/considerations-for-models-downloaded-before-914202"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Rent Rolls",
-                                                           "pages":  [
-                                                                         "rediq/rent-rolls/break-out-renovated-or-affordable-units",
-                                                                         "rediq/rent-rolls/combine-floor-plans",
-                                                                         "rediq/rent-rolls/commercial-units",
-                                                                         "rediq/rent-rolls/comparison-expired-lease-analysis",
-                                                                         "rediq/rent-rolls/edit-market-rent-or-square-footage-by-floor-plan",
-                                                                         "rediq/rent-rolls/edit-rent-roll-screen-anomalies",
-                                                                         "rediq/rent-rolls/labeling-renovations-in-a-subsequent-rent-roll",
-                                                                         "rediq/rent-rolls/loss-to-lease-burn-off-chart",
-                                                                         "rediq/rent-rolls/month-to-month-leases",
-                                                                         "rediq/rent-rolls/multiple-levels-of-renovation",
-                                                                         "rediq/rent-rolls/net-effective-rent",
-                                                                         "rediq/rent-rolls/recent-lease-analysis",
-                                                                         "rediq/rent-rolls/rent-roll-capture-compatibility",
-                                                                         "rediq/rent-rolls/rent-roll-template",
-                                                                         "rediq/rent-rolls/rent-roll-up",
-                                                                         "rediq/rent-rolls/turnaround-time-for-manually-processed-rent-rolls",
-                                                                         "rediq/rent-rolls/what-does-mapping-mean",
-                                                                         "rediq/rent-rolls/why-are-there-fewer-floor-plans-than-expected"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Training Resources",
-                                                           "pages":  [
-                                                                         "rediq/training-resources/callout-block-examples",
-                                                                         "rediq/training-resources/online-training-courses",
-                                                                         "rediq/training-resources/student-housing-faq-and-upcoming-enhancements"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Deals",
-                                                           "pages":  [
-                                                                         "rediq/deals/comp-report",
-                                                                         "rediq/deals/deal-action-menu",
-                                                                         "rediq/deals/deal-headers",
-                                                                         "rediq/deals/deal-log",
-                                                                         "rediq/deals/deal-page",
-                                                                         "rediq/deals/expense-and-rent-comp-report",
-                                                                         "rediq/deals/how-to-create-a-portfolio-deal",
-                                                                         "rediq/deals/name-tab",
-                                                                         "rediq/deals/pipeline-report",
-                                                                         "rediq/deals/search-setting-filters",
-                                                                         "rediq/deals/share-deal",
-                                                                         "rediq/deals/student-housing",
-                                                                         "rediq/deals/support-for-single-family-rental-sfr-deals"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "Getting Started",
-                                                           "pages":  [
-                                                                         "rediq/getting-started/compatibility",
-                                                                         "rediq/getting-started/data-elements-available-via-the-add-in",
-                                                                         "rediq/getting-started/getting-started",
-                                                                         "rediq/getting-started/how-to-add-edit-and-delete-named-ranges",
-                                                                         "rediq/getting-started/installation-methods",
-                                                                         "rediq/getting-started/quicksync-set-up-guide",
-                                                                         "rediq/getting-started/quicksync-2-way-sync"
-                                                                     ]
-                                                       },
-                                                       {
                                                            "group":  "Contacting Support",
                                                            "pages":  [
                                                                          "rediq/contacting-support/contact-us-by-phone-or-email",
@@ -418,36 +204,121 @@
                                                                      ]
                                                        },
                                                        {
-                                                           "group":  "About",
+                                                           "group":  "Dataiq",
                                                            "pages":  [
-                                                                         "rediq/about/generating-a-model",
-                                                                         "rediq/about/what-is-the-valuation-model"
+                                                                         "rediq/dataIQ/deals/comp-report",
+                                                                         "rediq/dataIQ/deals/deal-action-menu",
+                                                                         "rediq/dataIQ/deals/deal-headers",
+                                                                         "rediq/dataIQ/deals/deal-log",
+                                                                         "rediq/dataIQ/deals/deal-page",
+                                                                         "rediq/dataIQ/deals/expense-and-rent-comp-report",
+                                                                         "rediq/dataIQ/deals/how-to-create-a-portfolio-deal",
+                                                                         "rediq/dataIQ/deals/name-tab",
+                                                                         "rediq/dataIQ/deals/pipeline-report",
+                                                                         "rediq/dataIQ/deals/search-setting-filters",
+                                                                         "rediq/dataIQ/deals/share-deal",
+                                                                         "rediq/dataIQ/deals/student-housing",
+                                                                         "rediq/dataIQ/deals/student-housing-faq-and-upcoming-enhancements",
+                                                                         "rediq/dataIQ/deals/support-for-single-family-rental-sfr-deals",
+                                                                         "rediq/dataIQ/firstpass/what-is-firstpass",
+                                                                         "rediq/dataIQ/firstpass/what-is-the-difference-between-firstpass-and-valua",
+                                                                         "rediq/dataIQ/operating-statements/aggregate-expense-comp-data",
+                                                                         "rediq/dataIQ/operating-statements/annual-operating-statements",
+                                                                         "rediq/dataIQ/operating-statements/automatically-uploading-operating-statements",
+                                                                         "rediq/dataIQ/operating-statements/below-the-noi-beta",
+                                                                         "rediq/dataIQ/operating-statements/calculated-noi-does-not-match-original-noi",
+                                                                         "rediq/dataIQ/operating-statements/chart-of-accounts",
+                                                                         "rediq/dataIQ/operating-statements/delete-a-batch-of-operating-statements",
+                                                                         "rediq/dataIQ/operating-statements/detailed-chart-of-accounts",
+                                                                         "rediq/dataIQ/operating-statements/manually-uploading-operating-statements",
+                                                                         "rediq/dataIQ/operating-statements/mapping-below-the-noi-beta",
+                                                                         "rediq/dataIQ/operating-statements/mapping-operating-statements",
+                                                                         "rediq/dataIQ/operating-statements/operating-statement-aggregate-analysis",
+                                                                         "rediq/dataIQ/operating-statements/operating-statements",
+                                                                         "rediq/dataIQ/operating-statements/operating-statements-and-property-data-bulk-upload",
+                                                                         "rediq/dataIQ/operating-statements/proforma-vs-actual-user-guide-faqs-beta",
+                                                                         "rediq/dataIQ/operating-statements/rent-occupancy-chart",
+                                                                         "rediq/dataIQ/operating-statements/year-over-year-by-month-chart",
+                                                                         "rediq/dataIQ/radix-research/radix-research-field-definitions-calculation-metho",
+                                                                         "rediq/dataIQ/radix-research/radix-research-in-rediq",
+                                                                         "rediq/dataIQ/rent-rolls/break-out-renovated-or-affordable-units",
+                                                                         "rediq/dataIQ/rent-rolls/combine-floor-plans",
+                                                                         "rediq/dataIQ/rent-rolls/commercial-units",
+                                                                         "rediq/dataIQ/rent-rolls/comparison-expired-lease-analysis",
+                                                                         "rediq/dataIQ/rent-rolls/edit-market-rent-or-square-footage-by-floor-plan",
+                                                                         "rediq/dataIQ/rent-rolls/edit-rent-roll-screen-anomalies",
+                                                                         "rediq/dataIQ/rent-rolls/labeling-renovations-in-a-subsequent-rent-roll",
+                                                                         "rediq/dataIQ/rent-rolls/loss-to-lease-burn-off-chart",
+                                                                         "rediq/dataIQ/rent-rolls/month-to-month-leases",
+                                                                         "rediq/dataIQ/rent-rolls/multiple-levels-of-renovation",
+                                                                         "rediq/dataIQ/rent-rolls/net-effective-rent",
+                                                                         "rediq/dataIQ/rent-rolls/recent-lease-analysis",
+                                                                         "rediq/dataIQ/rent-rolls/rent-roll-capture-compatibility",
+                                                                         "rediq/dataIQ/rent-rolls/rent-roll-template",
+                                                                         "rediq/dataIQ/rent-rolls/rent-roll-up",
+                                                                         "rediq/dataIQ/rent-rolls/turnaround-time-for-manually-processed-rent-rolls",
+                                                                         "rediq/dataIQ/rent-rolls/what-does-mapping-mean",
+                                                                         "rediq/dataIQ/rent-rolls/why-are-there-fewer-floor-plans-than-expected",
+                                                                         "rediq/dataIQ/settings-and-admin/addmanage-users",
+                                                                         "rediq/dataIQ/settings-and-admin/help",
+                                                                         "rediq/dataIQ/settings-and-admin/logging-in",
+                                                                         "rediq/dataIQ/settings-and-admin/password-recovery",
+                                                                         "rediq/dataIQ/smartmap/account-setup",
+                                                                         "rediq/dataIQ/smartmap/how-to-override-or-change-the-sm-mapping",
+                                                                         "rediq/dataIQ/smartmap/overview-and-in-app-experience",
+                                                                         "rediq/dataIQ/smartmap/smartmap-faqs",
+                                                                         "rediq/dataIQ/smartmap/uploading-and-using-smartmap",
+                                                                         "rediq/dataIQ/smartmap/using-sm-to-map-accounts-on-existing-os-uploads",
+                                                                         "rediq/dataIQ/smartmap/using-sm-with-legacy-mappings"
                                                                      ]
                                                        },
                                                        {
-                                                           "group":  "Video Tutorials",
+                                                           "group":  "Quicksync",
                                                            "pages":  [
-                                                                         "rediq/video-tutorials/quicksync-mapping"
+                                                                         "rediq/QuickSync/best-practices-and-tips/2-way-sync-faq",
+                                                                         "rediq/QuickSync/best-practices-and-tips/best-practices-and-tips",
+                                                                         "rediq/QuickSync/best-practices-and-tips/fix-retrieve-data-error",
+                                                                         "rediq/QuickSync/getting-started/compatibility",
+                                                                         "rediq/QuickSync/getting-started/data-elements-available-via-the-add-in",
+                                                                         "rediq/QuickSync/getting-started/getting-started",
+                                                                         "rediq/QuickSync/getting-started/how-to-add-edit-and-delete-named-ranges",
+                                                                         "rediq/QuickSync/getting-started/installation-methods",
+                                                                         "rediq/QuickSync/getting-started/quicksync-2-way-sync",
+                                                                         "rediq/QuickSync/getting-started/quicksync-set-up-guide",
+                                                                         "rediq/QuickSync/rent-roll/rent-roll",
+                                                                         "rediq/QuickSync/video-tutorials/quicksync-mapping"
                                                                      ]
                                                        },
                                                        {
-                                                           "group":  "Radix Research",
+                                                           "group":  "Training Resources",
                                                            "pages":  [
-                                                                         "rediq/radix-research/radix-research-field-definitions-calculation-metho",
-                                                                         "rediq/radix-research/radix-research-in-rediq"
+                                                                         "rediq/training-resources/online-training-courses"
                                                                      ]
                                                        },
                                                        {
-                                                           "group":  "Rent Roll",
+                                                           "group":  "Valuationiq",
                                                            "pages":  [
-                                                                         "rediq/rent-roll/rent-roll"
-                                                                     ]
-                                                       },
-                                                       {
-                                                           "group":  "FirstPass",
-                                                           "pages":  [
-                                                                         "rediq/firstpass/what-is-firstpass",
-                                                                         "rediq/firstpass/what-is-the-difference-between-firstpass-and-valua"
+                                                                         "rediq/valuationIQ/about/generating-a-model",
+                                                                         "rediq/valuationIQ/about/what-is-the-valuation-model",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/adjustments-and-notes",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/advanced-loan-calcs-overview",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/bridge-loan-deep-dive",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/commercial-component",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/customize-model-colors",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/customize-model-colors-41475232",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/detail-assumptions",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/future-value-refinance-deep-dive",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/how-to-save-and-print-as-pdf-in-valuationiq-for-ma",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/lease-up-module",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/partnership-structures",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/preset-assumptions",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/roll-up-portfolio-model",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/syncing-model-with-the-cloud",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/underwrite-without-operating-data",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/update-sensitivities-analysis",
+                                                                         "rediq/valuationIQ/how-to-use-the-model/valuationiq-proforma-exporting-and-importing",
+                                                                         "rediq/valuationIQ/troubleshooting/blocked-macros-in-valuationiq-model",
+                                                                         "rediq/valuationIQ/troubleshooting/considerations-for-models-downloaded-before-914202"
                                                                      ]
                                                        }
                                                    ]
