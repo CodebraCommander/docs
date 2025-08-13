@@ -1,0 +1,38 @@
+---
+description: The rent roll may be more complex to configure depending on the model
+  practices If you are an existing client and use the redIQ exports to populate your
+  mode...
+title: Rent Roll
+---
+
+The rent roll may be more complex to configure depending on the model practices. If you are an existing client and use the redIQ exports to populate your models, you should be able to select the report in the add-in and populate that data without needing to modify your model.  Some of the popular report exports frequently directly copied and pasted into user models are the Floor Plan Summary, the Rent Roll, and the Rent Roll Source Data.  If you are not current client or do not use the redIQ report exports, you may need to make other changes. 
+
+
+### **Current Client Export Users**
+
+
+
+
+
+* Once you have identified which reports are being used, you need only to choose the correct destination cell for that report and add the named range associated with that report to that cell.  As a rule, reports generated via the Add-in will have the same shape as the original excel exports, but they include only column headers, values, and totals.  Once you have identified the top left cell of the column headers, add the named range to that cell.  You can continue this practice with all other reports they are directly copying and pasting into your models.
+
+
+### **Other Clients**
+
+
+
+
+* If you are not a current client or don’t use our report exports, ask “which actual (historical) rent roll data is needed to drive the valuation?”  For some models, the answer may be “none.”  For others, you will likely need information on each unit or information on each floor plan.  Based off which data is needed, you can determine which redIQ report or reports will provide the required data.
+
+
+
+
+
+
+* Once you have determined which report will provide the needed data, you need to determine where that report belongs.  The two options are to add the reports to their own new location and then to link the current inputs to the report which is recommended or to replace the existing inputs with the redIQ report.
+
+
+
+
+* Recommended: If you choose to reference the redIQ report from the current inputs, you will need to just add formulas to the current inputs to reference the corresponding values in the redIQ reports. After adding these formulas, be sure to update the cell formatting to reflect that the inputs are now derived values and the inputs are elsewhere. NOTE: This option is recommended because it will be easier to spot any mistakes you may make and correct them. It is also easier to configure because it doesn’t require moving pieces of their model around, only redirects inputs to pull from redIQ reports.
+* If you choose to replace the existing inputs, you will likely need to update any formulas referencing the current inputs so that the correct input data is being pulled.

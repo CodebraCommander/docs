@@ -1,0 +1,107 @@
+---
+description: QuickSync redIQ’s Excel addin that populates your own underwriting model
+  now also includes the ability to sync data back from Excel to redIQ with QuickSync
+  W...
+title: Quicksync 2-Way Sync
+---
+
+**Overview**
+
+
+QuickSync, redIQ’s Excel add-in that populates your own underwriting model, now also includes the ability to sync data back from Excel to redIQ with QuickSync 2-Way Sync. This new “upload” sync (from your model to dataIQ) can be used independently or in tandem with the existing “download” sync functionality. QuickSync 2-Way Sync bolsters redIQ’s capabilities as a collaborative pipeline management tool, with the ability to sync back valuable underwriting metrics for any deal in your account. 2-Way Sync is currently limited to “Deal Details” fields and does not include rent rolls or operating statements.
+
+
+**How do I access QuickSync 2-Way Sync?**
+
+
+2-Way Sync is available through the existing redIQ QuickSync add-in.   
+The easiest way to install QuickSync is directly through Microsoft AppSource at [this page](https://appsource.microsoft.com/en-us/product/office/WA200001147). Click "Get It Now", and then follow the steps to install. If your organization requires installation via centralized deployment, visit Microsoft's [documentation on Centralized Deployments](https://learn.microsoft.com/en-us/office/dev/add-ins/publish/publish#recommended-approach-for-deploying-office-add-ins). In some rare cases, the updates will not appear until a user restarts Excel.   
+After installing QuickSync, you should see the redIQ Add-In visible on the ribbon in Excel on the Home tab, on the right-hand side.
+
+
+<Frame>
+  <img src="/images/rediq/b164e68500441f6a44956ae08f74678f13a4a7b5.png" alt="2 way sync 1.png" />
+</Frame>
+
+
+Click the add-in and enter your redIQ credentials to sign in.
+
+
+<Frame>
+  <img src="/images/rediq/9234c5f61260e009aebe0132fd382d043a25cefd.png" alt="2 way sync 2.png" />
+</Frame>
+
+
+**What is the in-app experience with QuickSync 2-Way Sync?**
+
+
+Add Named Ranges to Excel Model
+
+
+2-Way Sync utilizes Named Ranges in Excel to specify which data is to be synced. Named ranges are alternative names for individual cells or an array of cells. By naming a cell or array, this allows you to customize which data can sync back to redIQ. If not yet configured, refer to the steps below to add named ranges to your model.
+
+
+Once you have selected a deal in QuickSync, navigate to the Property Details section and click “Destinations not Configured.”
+
+
+<Frame>
+  <img src="/images/rediq/be56d5ef9552d3bef8d442a394ebba9c1d3ef1a4.png" alt="2 way sync 3.png" />
+</Frame>
+
+
+This will show a list of fields that are available to sync back to redIQ from your model, which have not yet been set up. To add these fields and enable 2-Way Sync, the named ranges associated with these fields must be added to your model. Once you have determined which data you would like to sync back from your template and where it is located, simply copy the specified named range and create that named range in the desired location in the workbook by pasting it in the Name Box next to the formula bar.
+
+
+<Frame>
+  <img src="/images/rediq/1e31c43ff8ba70c23ae00197688760e11328370d.png" alt="2 way sync 4.png" />
+</Frame>
+
+
+**Selecting a Deal**  
+Open an Excel model that has QuickSync named ranges configured. Then, once in Excel, open the QuickSync Add-In on the ribbon and login using your redIQ credentials. Select a deal for which you would like to update the deal details in redIQ, using data from your Excel model.  
+For a first-time set up, we recommend using a deal for which you have a completed model so that you can test syncing data back from your model.
+
+
+**Selecting Fields to Sync Back**  
+Any fields selected in the Property Details will be included in the upload sync. If you do not wish to include certain fields, you can unselect them by unchecking the checkboxes next to them before clicking the “Sync” button.
+
+
+**Syncing Back**  
+Once the named ranges have been added to your model and you have selected the data you would like to sync back to redIQ, click the “Sync” button at the top of QuickSync. The values for these fields will be updated in the Deal Details section online based on what is in the applicable named range.
+
+
+<Frame>
+  <img src="/images/rediq/6ceaef9ddedd9d29c228b3cd960348459e27e220.png" alt="2 way sync 5.png" />
+</Frame>
+
+
+If you do not see the “Sync” button, 2-Way Sync may not be enabled in your account.
+
+
+**Fields Available in 2-Way Sync**  
+All fields in the Deal Details section are included in 2-Way Sync. These include the following: 
+
+
+
+
+|  |  |
+| --- | --- |
+| • Deal Name\*• Asset Type\*• Units• Square Feet• Address\*• City\*• State\*• Zip Code\*• Market• University Affiliation\*\*• Stories• Year Built• Acres• Year Renovated• Building Type• Number of Buildings• Parking Spaces• Current Owner• Location Quality• Asset Quality• Parcel Number• Property Manager• Account Name• Website• Age Restricted (\*cannot have null value online) | • Affordability Status• Deal Status\*• Bid Due Date• Fund• Deal Type• Operations Start Date• Expected Purchase Price• Equity Multiple• Required Equity• Leveraged IRR• Going-in Cap Rate• Sale Price• Sale Date• Trailing Cap Rate• Buyer• Seller• Broker• Broker Email• Broker Phone #• Last Sale Date• Last Sale Price• Affordable Units Percentage (\*cannot have null value online)• Trailing NOI  |
+
+
+**Upload-Only Fields**  
+The following fields are upload-only and are not included for downloading. This is to ensure that the values in these fields do not get overwritten in your model, as these are typically underwriting metrics that are outputs from calculated formulas.
+
+
+• Expected Purchase Price  
+• Equity Multiple  
+• Required Equity  
+• Leveraged IRR  
+• Going-in Cap Rate  
+• Sale Price  
+• Sale Date  
+• Trailing Cap Rate
+
+
+\* Required field in redIQ  
+\*\* Coming soon for Student Housing

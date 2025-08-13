@@ -1,0 +1,77 @@
+---
+description: NOTE the following actions can only be performed by an Account Administrator
+  and these settings are applicable to all users in the account
+title: Account Setup
+---
+
+**NOTE**: *the following actions can only be performed by an Account Administrator and these settings are* *applicable to all users in the account.*
+
+
+**Chart of Account Mapping**
+
+
+There is a new section in the account settings named “SmartMap+” that contains the new SmartMap+ Accounts Mapping tool. The new SM+ Master COA is more granular than the standard redIQ COA, and if your account has a custom COA set up in redIQ, you will need to map each line item from the SM+ Master COA to your account’s custom COA. If you do not use a custom COA for your account, you can either create one or skip this setup and all operating statements that you upload utilizing SM+ will be mapped to the default redIQ SmartMap+ COA.
+
+
+Map the SM+ Master COA to your account’s custom COA by following these steps (as noted above, you must be an Account Administrator to access these settings):
+
+
+  
+**1**. Navigate to the settings > SmartMap+ section
+
+
+<Frame>
+  <img src="/images/rediq/40696b0378fa0c34764c4c301932981cdde9ea20.png" alt="Account Set up 1.png" />
+</Frame>
+
+
+**2**. In the page that opens, click the “Edit All Mappings” button at the top-right corner of the screen to start matching the SM+ Master Chart of Accounts column to your account’s COA.
+
+
+  
+**3**. You will now see that the cells in the “Code” and “Your Account” columns of the COA table have a drop-down list that contains your COA as set up in your Chart of Accounts settings. It is also possible to type in the shorthand code in the "Code" column.
+
+
+<Frame>
+  <img src="/images/rediq/3d8d4d140953f19763ed8455386aa47a4022781e.png" alt="Account Set up 2.png" />
+</Frame>
+
+
+**4**. Select the matching account from the drop-down list. When completing the SmartMap+ mappings you can save your work and stop if you need, the mapping does not need to be completed in one sitting. 
+
+
+<Frame>
+  <img src="/images/rediq/2e494e84a79044bb0d764c6ceda0d42d0ae0490c.png" alt="Account Set up 3.png" />
+</Frame>
+
+
+**Note**: In the example above, this account does not invest in subsidized housing, so there are no equivalents for *Subsidized Rent or Section 8 Overhang* in their COA. In these types of situations, select the closest equivalent account from your COA. ***All accounts in the Master Chart of Account column must be** **mapped to the closest equivalent account from your COA for SmartMap+ to function correctly***. Often, this can be accomplished by assigning them to “Other” or “Misc.” account codes.
+
+
+redIQ would be happy to assist your team in setting up these accounts in SmartMap+. Please contact your Customer Success Manager for more information.
+
+
+**Default Mapping Settings (SmartMap+ or Legacy Mapping)**
+
+
+The next step is to set the default mapping process for your account. The default mapping setting will determine if SmartMap+ or Legacy Mapping will be used to map the line-item accounts from the uploaded operating statement into the deal that you are currently working on.
+
+
+Navigate to your account settings > Edit Account and select either SmartMap+ or Legacy Mapping as the default method.
+
+
+<Frame>
+  <img src="/images/rediq/4e1d48f41961b012bdfc1b9ff96e85775697f24f.png" alt="Account Set up 4.png" />
+</Frame>
+
+
+**How to determine which process should be set as the default**
+
+
+The number of new, unfamiliar operating statements that you work with will determine if the default should be set to SmartMap+ or to Legacy Mapping. As noted above, SmartMap+ is most effective when uploading a new operating statement that is in an unfamiliar format (for example, from a seller that you have not worked with previously.) Once you have uploaded the OS and mapped it using SM+, all subsequent operating statements that are in that same format can be quickly mapped using Legacy Mapping.
+
+
+If the majority of the operating statements you work with are in a standardized format, you will most likely want to set Legacy Mapping as the default mapping method.
+
+
+Please note that you will have the option to override the default and select either method of mapping an operating statement when an OS is uploaded into the deal. The instructions below are based on selecting SmartMap+ as the default mapping method in the Account Settings. Refer to the “How to Use SM+ When Legacy Mapping is set as the Default Mapping Method” section.

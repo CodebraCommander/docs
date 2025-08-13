@@ -14,6 +14,20 @@ from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 import boto3
 from botocore.exceptions import ClientError
+import builtins
+
+# Ensure printing doesn't fail on Windows consoles without UTF-8
+def _print_unicode_safe(*args, **kwargs):
+    ascii_args = []
+    for a in args:
+        try:
+            ascii_args.append(str(a).encode('ascii', 'ignore').decode('ascii'))
+        except Exception:
+            ascii_args.append(str(a))
+    builtins.print(*ascii_args, **kwargs)
+
+# Override print for this script
+print = _print_unicode_safe
 
 class MintlifyMigrator:
     """Migrates S3-based documentation to Mintlify format"""
@@ -53,11 +67,18 @@ class MintlifyMigrator:
             'errors': [],
             'warnings': []
         }
+        # Manifest indexes (optional)
+        self.manifest_by_article_id: Dict[str, Dict] = {}
+        self.manifest_by_numeric_id: Dict[str, Dict] = {}
+        self.manifest_by_slug: Dict[str, Dict] = {}
 
     def run_migration(self):
         """Execute the complete migration process"""
         print("🚀 Starting Mintlify migration...")
         
+        # Step 0: Load manifest metadata when available
+        self.load_manifest_metadata()
+
         # Step 1: Load articles and metadata
         print("\n📚 Loading articles from S3...")
         self.load_articles()
@@ -89,58 +110,213 @@ class MintlifyMigrator:
         # Print summary
         self.print_summary()
 
+    def load_manifest_metadata(self):
+        """Best-effort load of manifests to enrich article metadata.
+
+        Looks for `kb/manifests/articles.jsonl` and indexes by article_id, slug,
+        and the numeric id suffix present in many filenames.
+        """
+        try:
+            manifest_key = f"{self.prefix}manifests/articles.jsonl"
+            obj = self.s3_client.get_object(Bucket=self.bucket, Key=manifest_key)
+            body = obj['Body'].read().decode('utf-8', errors='ignore')
+            for line in body.splitlines():
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    item = json.loads(line)
+                except Exception:
+                    continue
+
+                article_id = str(item.get('article_id', ''))
+                slug = str(item.get('slug', '')) if item.get('slug') is not None else ''
+                self.manifest_by_article_id[article_id] = item
+
+                # Extract numeric id (e.g., '...:38790618700820')
+                m = re.search(r':(\d+)$', article_id)
+                if m:
+                    self.manifest_by_numeric_id[m.group(1)] = item
+
+                if slug:
+                    self.manifest_by_slug[slug] = item
+
+        except ClientError:
+            # Manifest is optional; continue silently
+            pass
+
     def load_articles(self):
-        """Load all articles from S3"""
+        """Load all articles from S3
+
+        Uses the full relative path under `articles/` as a unique identifier to
+        avoid collisions when different folders share the same leaf folder name.
+        """
         paginator = self.s3_client.get_paginator('list_objects_v2')
         pages = paginator.paginate(
             Bucket=self.bucket,
             Prefix=f"{self.prefix}articles/"
         )
-        
+
         for page in pages:
             if 'Contents' not in page:
                 continue
-                
+
             for obj in page['Contents']:
                 key = obj['Key']
-                
+
                 # Process metadata.json files
                 if key.endswith('metadata.json'):
-                    article_id = key.split('/')[-2]
-                    
+                    # Unique identifier is the relative path inside articles/
+                    # Example: kb/articles/radix/reports/article-1/metadata.json ->
+                    # uid = radix/reports/article-1
+                    try:
+                        relative = key.split(f"{self.prefix}articles/")[-1]
+                        uid = relative.rsplit('/', 1)[0]
+                    except Exception:
+                        uid = key.split('/')[-2]
+
+                    leaf_article_id = uid.split('/')[-1]
+
                     try:
                         # Download metadata
                         response = self.s3_client.get_object(Bucket=self.bucket, Key=key)
                         metadata = json.loads(response['Body'].read())
-                        
+
                         # Download content
                         content_key = key.replace('metadata.json', 'content.md')
                         try:
                             content_response = self.s3_client.get_object(
-                                Bucket=self.bucket, 
+                                Bucket=self.bucket,
                                 Key=content_key
                             )
                             content = content_response['Body'].read().decode('utf-8')
                         except ClientError:
                             content = ""
                             self.migration_stats['warnings'].append(
-                                f"No content.md found for {article_id}"
+                                f"No content.md found for {uid}"
                             )
-                        
+
                         # Store article data
-                        self.articles[article_id] = {
+                        self.articles[uid] = {
                             'metadata': metadata,
                             'content': content,
-                            'article_id': article_id
+                            'article_id': leaf_article_id,
+                            'uid': uid,
                         }
-                        
-                        print(f"  ✓ Loaded: {metadata.get('title', article_id)}")
-                        
+
+                        print(f"  ✓ Loaded: {metadata.get('title', leaf_article_id)}")
+
                     except Exception as e:
                         self.migration_stats['errors'].append(
-                            f"Error loading article {article_id}: {str(e)}"
+                            f"Error loading article {uid}: {str(e)}"
                         )
-                        print(f"  ✗ Error loading {article_id}: {str(e)}")
+                        print(f"  ✗ Error loading {uid}: {str(e)}")
+
+                # Also support articles that only have content.md without metadata
+                elif key.endswith('content.md'):
+                    try:
+                        relative = key.split(f"{self.prefix}articles/")[-1]
+                        uid = relative.rsplit('/', 1)[0]
+
+                        # Skip if already loaded via metadata.json
+                        if uid in self.articles:
+                            continue
+
+                        # Download content
+                        content_response = self.s3_client.get_object(
+                            Bucket=self.bucket,
+                            Key=key
+                        )
+                        content = content_response['Body'].read().decode('utf-8')
+
+                        # Infer a title from the first H1 or fallback to folder name
+                        m = re.search(r'^#\s+(.+)$', content, flags=re.MULTILINE)
+                        leaf_article_id = uid.split('/')[-1]
+                        inferred_title = m.group(1).strip() if m else leaf_article_id.replace('-', ' ').title()
+
+                        metadata = {
+                            'title': inferred_title,
+                            'description': None,
+                            'product': 'general',
+                            'category': 'uncategorized',
+                        }
+
+                        self.articles[uid] = {
+                            'metadata': metadata,
+                            'content': content,
+                            'article_id': leaf_article_id,
+                            'uid': uid,
+                        }
+
+                        print(f"  ✓ Loaded (content-only): {inferred_title}")
+
+                    except Exception as e:
+                        self.migration_stats['errors'].append(
+                            f"Error loading content-only article at {key}: {str(e)}"
+                        )
+                        print(f"  ✗ Error loading content-only at {key}: {str(e)}")
+
+                # Support flat .md articles (legacy export):
+                elif key.endswith('.md') and '/articles/' in key and '/article-' not in key:
+                    try:
+                        # Example key: kb/articles/slug-name [123456].md
+                        filename = key.split('/')[-1]
+                        m_id = re.search(r'\[(\d+)\]\.md$', filename)
+                        m_slug = re.match(r'(.+?) \[\d+\]\.md$', filename)
+                        numeric_id = m_id.group(1) if m_id else None
+                        slug = m_slug.group(1) if m_slug else filename[:-3]
+
+                        # Download content
+                        content_response = self.s3_client.get_object(
+                            Bucket=self.bucket,
+                            Key=key
+                        )
+                        content = content_response['Body'].read().decode('utf-8', errors='ignore')
+
+                        # Try to enrich from manifest
+                        manifest_item = None
+                        if numeric_id and numeric_id in self.manifest_by_numeric_id:
+                            manifest_item = self.manifest_by_numeric_id[numeric_id]
+                        elif slug and slug in self.manifest_by_slug:
+                            manifest_item = self.manifest_by_slug[slug]
+
+                        leaf_article_id = numeric_id or slug
+                        if manifest_item:
+                            metadata = {
+                                'title': manifest_item.get('title') or slug.replace('-', ' ').title(),
+                                'description': None,
+                                'product': (manifest_item.get('product') or 'general').lower(),
+                                'category': manifest_item.get('category') or 'uncategorized',
+                                'section': manifest_item.get('section'),
+                                'tags': manifest_item.get('tags') or [],
+                                'media_ids': manifest_item.get('media_ids') or [],
+                            }
+                        else:
+                            # Fallback: infer title from H1
+                            m_h1 = re.search(r'^#\s+(.+)$', content, flags=re.MULTILINE)
+                            inferred_title = m_h1.group(1).strip() if m_h1 else slug.replace('-', ' ').title()
+                            metadata = {
+                                'title': inferred_title,
+                                'description': None,
+                                'product': 'general',
+                                'category': 'uncategorized',
+                            }
+
+                        uid = f"legacy/{leaf_article_id}"
+                        self.articles[uid] = {
+                            'metadata': metadata,
+                            'content': content,
+                            'article_id': leaf_article_id,
+                            'uid': uid,
+                        }
+
+                        print(f"  ✓ Loaded (legacy .md): {metadata['title']}")
+
+                    except Exception as e:
+                        self.migration_stats['errors'].append(
+                            f"Error loading legacy .md article at {key}: {str(e)}"
+                        )
+                        print(f"  ✗ Error loading legacy .md at {key}: {str(e)}")
 
     def load_media_metadata(self):
         """Load media metadata from S3"""
@@ -181,33 +357,46 @@ class MintlifyMigrator:
                         print(f"  Warning: Could not load media metadata for {media_id}: {e}")
 
     def convert_articles(self):
-        """Convert all articles to MDX format"""
-        for article_id, article_data in self.articles.items():
+        """Convert all articles to MDX format
+
+        Ensures unique output filenames when multiple articles would otherwise
+        map to the same product/category/section/title path.
+        """
+        used_paths = set()
+        for uid, article_data in self.articles.items():
             try:
                 file_path, mdx_content = self.transform_article_to_mdx(
-                    article_id,
+                    uid,
                     article_data['metadata'],
                     article_data['content']
                 )
-                
+
+                # Ensure uniqueness of file path
+                if file_path in used_paths:
+                    base, ext = os.path.splitext(file_path)
+                    safe_uid = re.sub(r'[^a-zA-Z0-9_-]', '-', article_data.get('uid', uid))
+                    short = safe_uid[-8:]
+                    file_path = f"{base}-{short}{ext}"
+                used_paths.add(file_path)
+
                 # Save MDX file
                 full_path = self.output_dir / file_path
                 full_path.parent.mkdir(parents=True, exist_ok=True)
-                
+
                 with open(full_path, 'w', encoding='utf-8') as f:
                     f.write(mdx_content)
-                
+
                 # Store file path for navigation
                 article_data['file_path'] = file_path
-                
+
                 self.migration_stats['articles_processed'] += 1
-                print(f"  ✓ Converted: {article_data['metadata'].get('title', article_id)}")
-                
+                print(f"  ✓ Converted: {article_data['metadata'].get('title', uid)}")
+
             except Exception as e:
                 self.migration_stats['errors'].append(
-                    f"Error converting article {article_id}: {str(e)}"
+                    f"Error converting article {uid}: {str(e)}"
                 )
-                print(f"  ✗ Error converting {article_id}: {str(e)}")
+                print(f"  ✗ Error converting {uid}: {str(e)}")
 
     def transform_article_to_mdx(self, article_id: str, metadata: Dict, content: str) -> Tuple[str, str]:
         """Transform S3 article to Mintlify MDX format"""
@@ -295,6 +484,8 @@ class MintlifyMigrator:
         def replace_media(match):
             media_ref = match.group(1)
             media_id = media_ref.split('/')[-1] if '/' in media_ref else media_ref
+            # Normalize sha1: prefix
+            media_id = media_id.replace('sha1:', '')
             
             # Determine product for organizing images
             product = metadata.get('product', 'general').lower()
@@ -308,6 +499,15 @@ class MintlifyMigrator:
         
         # Replace kb:// references
         content = re.sub(r'kb://media/([^)]+)', replace_media, content)
+
+        # Replace direct kb/media/... links
+        def replace_direct_media(match):
+            path = match.group(1)
+            filename = path.split('/')[-1]
+            product = metadata.get('product', 'general').lower()
+            return f"/images/{product}/{filename}"
+
+        content = re.sub(r'\((?:https?://[^)]+/)?kb/media/([^ )]+)\)', lambda m: f"(/images/{metadata.get('product','general').lower()}/{m.group(1).split('/')[-1]})", content)
         
         # Wrap standalone images in Frame components
         content = re.sub(
@@ -394,71 +594,69 @@ class MintlifyMigrator:
         return content + faq_section
 
     def download_media_files(self):
-        """Download media files from S3"""
-        
+        """Download media files from S3
+
+        Collects media IDs from both metadata and inline `kb://media/...`
+        and `kb/media/...` references within article content.
+        """
+
         # Get list of all media files referenced in articles
         referenced_media = set()
+        media_ref_pattern = re.compile(r'kb://media/([^\s)]+)')
+        direct_media_pattern = re.compile(r'\((?:https?://[^)]+/)?kb/media/([^ )]+)\)')
         for article in self.articles.values():
+            # From metadata
             media_ids = article['metadata'].get('media_ids', [])
-            referenced_media.update(media_ids)
-        
+            for mid in media_ids:
+                clean = str(mid).replace('sha1:', '')
+                referenced_media.add(clean)
+            # From inline content
+            for match in media_ref_pattern.findall(article.get('content', '')):
+                referenced_media.add(match.split('/')[-1].replace('sha1:', ''))
+            for match in direct_media_pattern.findall(article.get('content', '')):
+                referenced_media.add(match.split('/')[-1])
+
         # Download referenced media
         for media_id in referenced_media:
             try:
-                # Try to find the media file in S3
-                # First check YYYY/MM structure
+                # Try to download directly by canonical location
                 found = False
-                
-                # List potential locations
-                search_prefixes = [
-                    f"{self.prefix}media/",
-                ]
-                
-                for search_prefix in search_prefixes:
+                canonical_key = f"{self.prefix}media/{media_id}"
+                # Determine product folder for local organization
+                product = 'general'
+                for article in self.articles.values():
+                    mi = [str(m).replace('sha1:', '') for m in article['metadata'].get('media_ids', [])]
+                    if media_id in mi or media_id in article.get('content', ''):
+                        product = article['metadata'].get('product', 'general').lower()
+                        break
+
+                filename = media_id.split('/')[-1]
+                local_path = self.output_dir / 'images' / product / filename
+                local_path.parent.mkdir(parents=True, exist_ok=True)
+
+                try:
+                    self.s3_client.download_file(self.bucket, canonical_key, str(local_path))
+                    self.migration_stats['media_processed'] += 1
+                    print(f"  ✓ Downloaded: {filename}")
+                    found = True
+                except ClientError:
+                    # Fallback: search under all kb/media/ prefixes (including dated)
                     paginator = self.s3_client.get_paginator('list_objects_v2')
-                    pages = paginator.paginate(
-                        Bucket=self.bucket,
-                        Prefix=search_prefix
-                    )
-                    
+                    pages = paginator.paginate(Bucket=self.bucket, Prefix=f"{self.prefix}media/")
                     for page in pages:
                         if 'Contents' not in page:
                             continue
-                        
                         for obj in page['Contents']:
                             key = obj['Key']
-                            
-                            # Check if this is our media file
-                            if media_id in key and not key.endswith('metadata.json'):
-                                # Determine product folder
-                                product = 'general'
-                                for article in self.articles.values():
-                                    if media_id in article['metadata'].get('media_ids', []):
-                                        product = article['metadata'].get('product', 'general').lower()
-                                        break
-                                
-                                # Download file
-                                filename = key.split('/')[-1]
-                                local_path = self.output_dir / 'images' / product / filename
-                                local_path.parent.mkdir(parents=True, exist_ok=True)
-                                
-                                self.s3_client.download_file(
-                                    self.bucket,
-                                    key, 
-                                    str(local_path)
-                                )
-                                
+                            if key.endswith(filename):
+                                self.s3_client.download_file(self.bucket, key, str(local_path))
                                 self.migration_stats['media_processed'] += 1
                                 print(f"  ✓ Downloaded: {filename}")
                                 found = True
                                 break
-                        
                         if found:
                             break
-                    
-                    if found:
-                        break
-                
+
                 if not found:
                     self.migration_stats['warnings'].append(f"Media not found: {media_id}")
                     

@@ -1,0 +1,112 @@
+---
+description: The embedded RealRents allows you to display realtime transparent pricing
+  — including all mandatory fees deposits and concessions — directly on your property...
+sidebarTitle: Embedding RealRents...
+title: Embedding RealRents Calculator on Your Property Website
+---
+
+The embedded RealRents allows you to display real-time, transparent pricing — including all mandatory fees, deposits, and concessions — directly on your property website.
+
+By adding a single line of code, renters visiting your site will see up-to-date total pricing for any unit or floorplan without leaving your website. This ensures compliance with transparency regulations, improves renter trust, and can lead to higher conversions. 
+
+ 
+
+### What You’ll Need Before You Begin
+
+To successfully embed RealRents, make sure you have:
+
+* An **active RealRents integration** (your property data must be syncing).
+* **All fees, deposits, and concessions entered and kept updated** in RealRents.
+* **An API key** provided by Radix (unique for your property).
+
+Note: Contact your Client Success Manager if you have not yet received your API key. 
+
+ 
+
+### Step-by-Step Guide to Embed
+
+#### Step 1: Add the Script
+
+Include the RealRents embed script inside the <head> section of your website:
+
+
+
+|  |
+| --- |
+| <script src="https://embed.realrents.com/realrents-embed.js" data-api-key="YOUR\_API\_KEY"></script> |
+
+Replace YOUR\_API\_KEY with the **API key provided by Radix.**
+
+ 
+
+#### Step 2: Choose What You Want to Display
+
+You can display **all units**, **a specific floorplan**, or a **specific unit.**
+
+  
+**Option A: Display All Units**
+
+
+
+|  |
+| --- |
+| <real-rents></real-rents> |
+
+  
+**Option B: Display a Specific Floorplan**
+
+
+
+|  |
+| --- |
+| <real-rents floorplan-id="FLOORPLAN\_ID"></real-rents> |
+
+  
+**Option C: Display a Specific Unit**
+
+
+
+|  |
+| --- |
+| <real-rents unit-id="UNIT\_ID"></real-rents> |
+
+ 
+
+* FLOORPLAN\_ID = The unique ID of the floorplan in your Property Management System (PMS).
+* UNIT\_ID = The unique ID of the unit in your PMS.
+
+If no ID is provided, the widget will display all units at your property.
+
+![option a display all units.png](/images/radix/1f73fd31412adc291f08d83de6487108fe2ab86d.png)#### Step 3: Using the Price Card Component
+
+If you only want to show a **price card** (instead of the full table):
+
+
+
+|  |
+| --- |
+| <real-rents-price unit-id="UNIT\_ID" type="starting"></real-rents-price> |
+
+Attributes:
+
+* UNIT\_ID or FLOORPLAN\_ID (required)
+* type (optional: starting or range, default is starting)
+
+![price card.PNG](/images/radix/7d71240a440404d2586d1fc00c73fdba6f1b8419.png)### Best Practices
+
+* Place the calculator **wherever you want the pricing to appear** (e.g., next to your “Apply Now” button).
+* You can use **multiple instances** of the widget on the same page.
+* Always ensure your **fees and deposits are current in RealRents** — this keeps your website pricing accurate.
+* After embedding, **test across desktop and mobile** to confirm proper display.
+
+ 
+
+### Troubleshooting & Support
+
+If the widget does not display correctly, check:
+
+* The **API key** is correct and active.
+* The unit/floorplan IDs match your PMS.
+* The script is correctly placed inside the <head> tag.
+
+For assistance, contact RealRents Support at: support@radix.com

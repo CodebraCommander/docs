@@ -1,0 +1,30 @@
+---
+description: There are three actions that can be taken on the Adjustments  Notes tab
+  of the model The annualization of the historicals referenced throughout the model
+  can...
+title: Adjustments and Notes
+---
+
+There are three actions that can be taken on the Adjustments & Notes tab of the model. The annualization of the historicals referenced throughout the model can be changed, adjustments can be made to the historicals, and notes/comments can be added to explain historical or proforma numbers. An detailed explanation of all three actions is below.
+
+
+Cell D9 of the Adjustments & Notes tab dictates the historicals that are referenced throughout the model. Assuming monthly historicals were on redIQ prior to generating the model, the default entry in this cell is T1 annualized historicals. Therefore any time the historicals are referenced on the Input tab or Property CF tab, the T1 numbers appear. To change this, type in the number of months you'd like to use to annualize the historicals. For example if you type "3" and press enter in cell D9 then the T3 historicals will be used throughout the model instead of T1.
+
+
+Adjustments to the historicals can be made in column F of the Adjustments & Notes tab. This is meant to adjust for one time events in the historicals that were not indicative of how the property was operating. Enter the amount you'd like to add to the historical numbers in column D and the resulting adjusted historicals will appear in column G. For example, if the Repair & Maintenance expense should be $5,000 less than the actual amount, type -5000 in cell F34 and it will adjust the expense that amount.
+
+
+<Frame>
+  <img src="/images/rediq/a360fc58ae242abd85ab76d0776e7cb99cef92c8.png" alt="Adjustments and Notes new 1.PNG" />
+</Frame>
+
+
+To use the adjusted historicals throughout the rest of the model, there is one more step to take. Click the "Other" drop-down in the Model Settings section of the redIQ tab of the Ribbon. Select either the "Use Adjusted Historical NOI" or "Use Adjusted Historical NOI (with reassessed taxes)" option. Either of these options will ensure the adjusted historicals are used whenever there are references to the historicals in other tabs of the model. The only difference between the two is that the option with reassessed taxes will automatically bring in the reassessed real estate tax expense from the Input tab (assuming a reassessment has been entered) and use that amount in the adjusted historicals.
+
+
+<Frame>
+  <img src="/images/rediq/58b098799c987bce5c81fcafd0bdc8d4eed7ea0c.png" alt="Adjustments and Notes new 2.png" />
+</Frame>
+
+
+The third action that can be take on this tab is to enter notes/comments next to any of the line items in the cash flow. These will flow through to the Historical CF tab and appear as a footnote for the corresponding line. The text entered could be an explanation for an adjustment made to the historicals, the assumption used to arrive at the proforma numbers, or whatever extra detail you'd like to add into the model.

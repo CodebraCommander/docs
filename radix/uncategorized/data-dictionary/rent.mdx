@@ -1,0 +1,59 @@
+---
+description: Rent values are directly tied to a propertys revenue potential and are
+  therefore one of the most crucial data points to continually monitor In this article
+  w...
+title: Rent
+---
+
+Rent values are directly tied to a property's revenue potential, and are therefore one of the most crucial data points to continually monitor. In this article we'll define what rents are, how Radix calculates them, and outline built-in tools you can leverage to optimize rents.
+
+
+
+
+Definition Why it Matters
+
+Simply put, Rent is the monthly dollar amount a resident will pay in exchange for renting a unit. While there are different types of rents such as achieved rents and market rents, Radix focuses on **asking rents** to help our users focus on how to maximize the revenue potential of *available units*.
+Monthly rental income provided by residents occupying a unit is the primary revenue source for a multifamily property. As such, the amount of rent asked for a unit is directly linked to a property's revenue potential. This makes it a vital data point for all involved in the daily operations and success of a property to monitor closely.
+
+### How Radix Calculates Rents
+
+
+Radix collects rent data directly from properties via weekly property survey updates. Rents are displayed by **unit type** and reflect **asking rents** for available units. Here's how that data is collected for integrated and non-integrated properties. 
+
+
+#### Integrated Properties
+
+
+For properties that have established a PMS integration, rents are calculated using the following methodology: 
+
+
+<Steps>
+  <Step title="**Asking Rent:** When units are available, Radix reflects the average asking rent (including amenities) of all units within the unit type that are becoming available in the next 60 days.">
+  </Step>
+  <Step title="**Achieved Rent**: If no units are available, Radix reflects the average achieved rent (including amenities) for all units within the unit type that have been leased in the last 30 days, and move-ins scheduled for the next 60 days.">
+  </Step>
+  <Step title="**Market Rent:** If achieved rents are unavailable, Radix reflects the average market rent (including amenities) for all units within the unit type.">
+  </Step>
+</Steps>
+
+
+
+**Note:** Model, admin, and down units are not included in rent calculations for integrated properties unless the third Market Rent methodology is being used.
+
+
+
+#### Non-Integrated Properties
+
+
+For properties manually entering rent data, rents are collected by unit type and reflect the **best available rate for a 12-month lease term**. 
+
+
+### Evaluating Rent
+
+
+One of the goals of evaluating Rent is to determine if there are opportunities to optimize a property's revenue performance. We've outlined several tips and tools to help you spot these opportunities below.
+
+
+* **Benchmarking Performance:** Your [Snapshot](kb://article/zendesk:radix:9060091043981) and [Trends](kb://article/zendesk:radix:9060097289101) tools are designed to help you compare your property's performance to its competition. Use it to compare supply and demand metrics such as ATR, traffic, and leases per week to help build a case for decreasing concessions, increasing asking rents, and ultimately, optimizing rents.
+* **Comparing Floor Plans & Unit Types:** Your [Floor Plan Comparison Report](kb://article/zendesk:radix:15100961400845) is a great tool to help you answer questions relevant to optimizing rent performance. Investigate how your property's floor plans and unit types compare to your comps for data points like concessions, rent, and ATR. With this report, you'll be able to answer questions such as: ***How many units of a particular floor plan are available to rent?*** and ***What rents are being offered for specific floor plans and unit types?***
+* **Scatterplot Analysis:** The Scatter Plot chart within your [Market Survey Summary Report](kb://article/zendesk:radix:15109001351053) helps you analyze rent opportunities at the floor plan level. The floor plan types offered by a property and its competitors are plotted out, with a trend line for your property and a trend line representing a comp average. Use this chart to help visualize rent and NER deltas between similar-sized floor plans.![mceclip0.png](/images/radix/d794f32decd52868f78f54599c20a2b308622170.png)
