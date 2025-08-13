@@ -1,0 +1,9 @@
+---
+description: composing mdx files
+alwaysApply: false
+---
+# Mintlify Migration Context
+- Source: S3 bucket with metadata.json + content.md
+- Target: MDX files with YAML frontmatter
+- Always validate frontmatter has title and description
+- Use Mintlify components for better UX
