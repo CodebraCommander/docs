@@ -37,7 +37,7 @@
                         "group": "RealRents",
                         "pages": [
                             {
-                                "group": "general",
+                                "group": "General",
                                 "pages": [
                                     "radix/realrents/general/realrents-overview",
                                     "radix/realrents/general/property-update-reminder-emails",
@@ -52,7 +52,7 @@
                                 ]
                             },
                             {
-                                "group": "managing-listings",
+                                "group": "Managing Listings",
                                 "pages": [
                                     "radix/realrents/managing-listings/managing-listings-overview",
                                     "radix/realrents/managing-listings/how-to-edit-amenities-in-realrents",
@@ -62,7 +62,7 @@
                                 ]
                             },
                             {
-                                "group": "fees-deposits-and-concessions",
+                                "group": "Fees Deposits And Concessions",
                                 "pages": [
                                     "radix/realrents/fees-deposits-and-concessions/how-to-add-and-manage-fees-and-deposits-in-realren",
                                     "radix/realrents/fees-deposits-and-concessions/how-to-update-concessions-in-realrents",
@@ -70,7 +70,7 @@
                                 ]
                             },
                             {
-                                "group": "updating-your-market-survey-now-on-realrents",
+                                "group": "Updating Your Market Survey Now On Realrents",
                                 "pages": [
                                     "radix/realrents/updating-your-market-survey-now-on-realrents/property-update-reminder-emails",
                                     "radix/realrents/updating-your-market-survey-now-on-realrents/updating-competitor-surveys",
@@ -83,19 +83,10 @@
                         ]
                     },
                     {
-                        "group": "API Reference",
-                        "pages": [
-                            "radix/api/introduction-to-radix-api",
-                            "radix/api/benchmark-api-overview",
-                            "radix/api/getting-your-api-key",
-                            "radix/api/api-response-data-definitions"
-                        ]
-                    },
-                    {
                         "group": "Benchmark",
                         "pages": [
                             {
-                                "group": "report-overviews",
+                                "group": "Report Overviews",
                                 "pages": [
                                     "radix/Benchmark/report-overviews/amenities-report-overview",
                                     "radix/Benchmark/report-overviews/competitor-summary-report-overview",
@@ -114,7 +105,7 @@
                                 ]
                             },
                             {
-                                "group": "managing-users",
+                                "group": "Managing Users",
                                 "pages": [
                                     "radix/Benchmark/managing-users/single-sign-on-sso-setup",
                                     "radix/Benchmark/managing-users/adding-new-users",
@@ -124,7 +115,7 @@
                                 ]
                             },
                             {
-                                "group": "managing-properties",
+                                "group": "Managing Properties",
                                 "pages": [
                                     "radix/Benchmark/managing-properties/adding-a-property-to-benchmark",
                                     "radix/Benchmark/managing-properties/editing-property-floor-plans",
@@ -136,7 +127,7 @@
                                 ]
                             },
                             {
-                                "group": "customizing-reports",
+                                "group": "Customizing Reports",
                                 "pages": [
                                     "radix/Benchmark/customizing-reports/notifications-and-status-update",
                                     "radix/Benchmark/customizing-reports/customize-property-report-preferences-video",
@@ -148,7 +139,7 @@
                                 ]
                             },
                             {
-                                "group": "evaluating-your-portfolio-s-performance",
+                                "group": "Evaluating Your Portfolio S Performance",
                                 "pages": [
                                     "radix/Benchmark/evaluating-your-portfolio-s-performance/perspectives-overview-video",
                                     "radix/Benchmark/evaluating-your-portfolio-s-performance/how-to-create-or-edit-perspectives-video",
@@ -161,7 +152,7 @@
                                 ]
                             },
                             {
-                                "group": "data-dictionary",
+                                "group": "Data Dictionary",
                                 "pages": [
                                     "radix/Benchmark/data-dictionary/property-benchmark-terminology-and-formulas-video",
                                     "radix/Benchmark/data-dictionary/property-surveys-terminology-and-formulas-video",
@@ -182,7 +173,7 @@
                                 ]
                             },
                             {
-                                "group": "sharing-reports",
+                                "group": "Sharing Reports",
                                 "pages": [
                                     "radix/Benchmark/sharing-reports/automate-your-reporting",
                                     "radix/Benchmark/sharing-reports/download-share-save-property-reports-video",
@@ -193,25 +184,19 @@
                         ]
                     },
                     {
-                        "group": "Integrations",
+                        "group": "Research",
                         "pages": [
-                            "radix/integrations/onesite-integration-setup-guide",
-                            "radix/integrations/resman-integration-setup-guide",
-                            "radix/integrations/yardi-sipp-integration-setup-guide",
-                            "radix/integrations/property-management-system-pms-integration-overvie"
-                        ]
-                    },
-                    {
-                        "group": "Legacy",
-                        "pages": [
-                            "radix/legacy/adding-concessions-legacy",
-                            "radix/legacy/property-update-reminder-emails-legacy",
-                            "radix/legacy/updating-competitor-surveys-legacy",
-                            "radix/legacy/updating-property-surveys-legacy",
-                            "radix/legacy/locked-properties-legacy",
-                            "radix/legacy/shared-competitors-legacy",
-                            "radix/legacy/viewing-pms-imported-survey-data-legacy",
-                            "radix/legacy/web-scraped-property-survey-data-beta-legacy"
+                            "radix/research/overview-of-radix-research-video",
+                            "radix/research/construction-pipeline-dashboard",
+                            "radix/research/employment-dashboard",
+                            "radix/research/housing-affordability-dashboard",
+                            "radix/research/construction-pipeline-video",
+                            "radix/research/market-snapshot-and-trends-video",
+                            "radix/research/rent-and-operating-trends-video",
+                            "radix/research/10-questions-operators-can-answer-with-radix-resea",
+                            "radix/research/available-research-markets",
+                            "radix/research/market-snapshot",
+                            "radix/research/market-trends"
                         ]
                     },
                     {
@@ -231,19 +216,34 @@
                         ]
                     },
                     {
-                        "group": "Research",
+                        "group": "Integrations",
                         "pages": [
-                            "radix/research/overview-of-radix-research-video",
-                            "radix/research/construction-pipeline-dashboard",
-                            "radix/research/employment-dashboard",
-                            "radix/research/housing-affordability-dashboard",
-                            "radix/research/construction-pipeline-video",
-                            "radix/research/market-snapshot-and-trends-video",
-                            "radix/research/rent-and-operating-trends-video",
-                            "radix/research/10-questions-operators-can-answer-with-radix-resea",
-                            "radix/research/available-research-markets",
-                            "radix/research/market-snapshot",
-                            "radix/research/market-trends"
+                            "radix/integrations/onesite-integration-setup-guide",
+                            "radix/integrations/resman-integration-setup-guide",
+                            "radix/integrations/yardi-sipp-integration-setup-guide",
+                            "radix/integrations/property-management-system-pms-integration-overvie"
+                        ]
+                    },
+                    {
+                        "group": "API Reference",
+                        "pages": [
+                            "radix/api/introduction-to-radix-api",
+                            "radix/api/benchmark-api-overview",
+                            "radix/api/getting-your-api-key",
+                            "radix/api/api-response-data-definitions"
+                        ]
+                    },
+                    {
+                        "group": "Legacy",
+                        "pages": [
+                            "radix/legacy/adding-concessions-legacy",
+                            "radix/legacy/property-update-reminder-emails-legacy",
+                            "radix/legacy/updating-competitor-surveys-legacy",
+                            "radix/legacy/updating-property-surveys-legacy",
+                            "radix/legacy/locked-properties-legacy",
+                            "radix/legacy/shared-competitors-legacy",
+                            "radix/legacy/viewing-pms-imported-survey-data-legacy",
+                            "radix/legacy/web-scraped-property-survey-data-beta-legacy"
                         ]
                     }
                 ]
@@ -252,36 +252,10 @@
                 "tab": "redIQ",
                 "groups": [
                     {
-                        "group": "Contacting Support",
-                        "pages": [
-                            "rediq/contacting-support/contact-us-by-phone-or-email",
-                            "rediq/contacting-support/holidays-and-closures"
-                        ]
-                    },
-                    {
                         "group": "dataIQ",
                         "pages": [
                             {
-                                "group": "firstpass",
-                                "pages": [
-                                    "rediq/dataIQ/firstpass/what-is-firstpass",
-                                    "rediq/dataIQ/firstpass/what-is-the-difference-between-firstpass-and-valua"
-                                ]
-                            },
-                            {
-                                "group": "smartmap",
-                                "pages": [
-                                    "rediq/dataIQ/smartmap/overview-and-in-app-experience",
-                                    "rediq/dataIQ/smartmap/account-setup",
-                                    "rediq/dataIQ/smartmap/how-to-override-or-change-the-sm-mapping",
-                                    "rediq/dataIQ/smartmap/uploading-and-using-smartmap",
-                                    "rediq/dataIQ/smartmap/using-sm-to-map-accounts-on-existing-os-uploads",
-                                    "rediq/dataIQ/smartmap/using-sm-with-legacy-mappings",
-                                    "rediq/dataIQ/smartmap/smartmap-faqs"
-                                ]
-                            },
-                            {
-                                "group": "deals",
+                                "group": "Deals",
                                 "pages": [
                                     "rediq/dataIQ/deals/deal-log",
                                     "rediq/dataIQ/deals/deal-page",
@@ -300,38 +274,7 @@
                                 ]
                             },
                             {
-                                "group": "settings-and-admin",
-                                "pages": [
-                                    "rediq/dataIQ/settings-and-admin/addmanage-users",
-                                    "rediq/dataIQ/settings-and-admin/help",
-                                    "rediq/dataIQ/settings-and-admin/logging-in",
-                                    "rediq/dataIQ/settings-and-admin/password-recovery"
-                                ]
-                            },
-                            {
-                                "group": "operating-statements",
-                                "pages": [
-                                    "rediq/dataIQ/operating-statements/mapping-operating-statements",
-                                    "rediq/dataIQ/operating-statements/automatically-uploading-operating-statements",
-                                    "rediq/dataIQ/operating-statements/manually-uploading-operating-statements",
-                                    "rediq/dataIQ/operating-statements/operating-statements-and-property-data-bulk-upload",
-                                    "rediq/dataIQ/operating-statements/detailed-chart-of-accounts",
-                                    "rediq/dataIQ/operating-statements/aggregate-expense-comp-data",
-                                    "rediq/dataIQ/operating-statements/annual-operating-statements",
-                                    "rediq/dataIQ/operating-statements/calculated-noi-does-not-match-original-noi",
-                                    "rediq/dataIQ/operating-statements/chart-of-accounts",
-                                    "rediq/dataIQ/operating-statements/operating-statement-aggregate-analysis",
-                                    "rediq/dataIQ/operating-statements/operating-statements",
-                                    "rediq/dataIQ/operating-statements/rent-occupancy-chart",
-                                    "rediq/dataIQ/operating-statements/year-over-year-by-month-chart",
-                                    "rediq/dataIQ/operating-statements/delete-a-batch-of-operating-statements",
-                                    "rediq/dataIQ/operating-statements/mapping-below-the-noi-beta",
-                                    "rediq/dataIQ/operating-statements/below-the-noi-beta",
-                                    "rediq/dataIQ/operating-statements/proforma-vs-actual-user-guide-faqs-beta"
-                                ]
-                            },
-                            {
-                                "group": "rent-rolls",
+                                "group": "Rent Rolls",
                                 "pages": [
                                     "rediq/dataIQ/rent-rolls/what-does-mapping-mean",
                                     "rediq/dataIQ/rent-rolls/edit-market-rent-or-square-footage-by-floor-plan",
@@ -354,69 +297,76 @@
                                 ]
                             },
                             {
-                                "group": "radix-research",
+                                "group": "Operating Statements",
+                                "pages": [
+                                    "rediq/dataIQ/operating-statements/mapping-operating-statements",
+                                    "rediq/dataIQ/operating-statements/automatically-uploading-operating-statements",
+                                    "rediq/dataIQ/operating-statements/manually-uploading-operating-statements",
+                                    "rediq/dataIQ/operating-statements/operating-statements-and-property-data-bulk-upload",
+                                    "rediq/dataIQ/operating-statements/detailed-chart-of-accounts",
+                                    "rediq/dataIQ/operating-statements/aggregate-expense-comp-data",
+                                    "rediq/dataIQ/operating-statements/annual-operating-statements",
+                                    "rediq/dataIQ/operating-statements/calculated-noi-does-not-match-original-noi",
+                                    "rediq/dataIQ/operating-statements/chart-of-accounts",
+                                    "rediq/dataIQ/operating-statements/operating-statement-aggregate-analysis",
+                                    "rediq/dataIQ/operating-statements/operating-statements",
+                                    "rediq/dataIQ/operating-statements/rent-occupancy-chart",
+                                    "rediq/dataIQ/operating-statements/year-over-year-by-month-chart",
+                                    "rediq/dataIQ/operating-statements/delete-a-batch-of-operating-statements",
+                                    "rediq/dataIQ/operating-statements/mapping-below-the-noi-beta",
+                                    "rediq/dataIQ/operating-statements/below-the-noi-beta",
+                                    "rediq/dataIQ/operating-statements/proforma-vs-actual-user-guide-faqs-beta"
+                                ]
+                            },
+                            {
+                                "group": "Smartmap+",
+                                "pages": [
+                                    "rediq/dataIQ/smartmap/overview-and-in-app-experience",
+                                    "rediq/dataIQ/smartmap/account-setup",
+                                    "rediq/dataIQ/smartmap/how-to-override-or-change-the-sm-mapping",
+                                    "rediq/dataIQ/smartmap/uploading-and-using-smartmap",
+                                    "rediq/dataIQ/smartmap/using-sm-to-map-accounts-on-existing-os-uploads",
+                                    "rediq/dataIQ/smartmap/using-sm-with-legacy-mappings",
+                                    "rediq/dataIQ/smartmap/smartmap-faqs"
+                                ]
+                            },
+                            {
+                                "group": "FirstPass",
+                                "pages": [
+                                    "rediq/dataIQ/firstpass/what-is-firstpass",
+                                    "rediq/dataIQ/firstpass/what-is-the-difference-between-firstpass-and-valua"
+                                ]
+                            },
+                            {
+                                "group": "Radix Research",
                                 "pages": [
                                     "rediq/dataIQ/radix-research/radix-research-field-definitions-calculation-metho",
                                     "rediq/dataIQ/radix-research/radix-research-in-rediq"
                                 ]
-                            }
-                        ]
-                    },
-                    {
-                        "group": "QuickSync",
-                        "pages": [
-                            {
-                                "group": "getting-started",
-                                "pages": [
-                                    "rediq/QuickSync/getting-started/data-elements-available-via-the-add-in",
-                                    "rediq/QuickSync/getting-started/getting-started",
-                                    "rediq/QuickSync/getting-started/installation-methods",
-                                    "rediq/QuickSync/getting-started/compatibility",
-                                    "rediq/QuickSync/getting-started/quicksync-2-way-sync",
-                                    "rediq/QuickSync/getting-started/quicksync-set-up-guide",
-                                    "rediq/QuickSync/getting-started/how-to-add-edit-and-delete-named-ranges"
-                                ]
                             },
                             {
-                                "group": "video-tutorials",
+                                "group": "Settings and Admin",
                                 "pages": [
-                                    "rediq/QuickSync/video-tutorials/quicksync-mapping"
-                                ]
-                            },
-                            {
-                                "group": "best-practices-and-tips",
-                                "pages": [
-                                    "rediq/QuickSync/best-practices-and-tips/best-practices-and-tips",
-                                    "rediq/QuickSync/best-practices-and-tips/fix-retrieve-data-error",
-                                    "rediq/QuickSync/best-practices-and-tips/2-way-sync-faq"
-                                ]
-                            },
-                            {
-                                "group": "rent-roll",
-                                "pages": [
-                                    "rediq/QuickSync/rent-roll/rent-roll"
+                                    "rediq/dataIQ/settings-and-admin/addmanage-users",
+                                    "rediq/dataIQ/settings-and-admin/help",
+                                    "rediq/dataIQ/settings-and-admin/logging-in",
+                                    "rediq/dataIQ/settings-and-admin/password-recovery"
                                 ]
                             }
-                        ]
-                    },
-                    {
-                        "group": "Training Resources",
-                        "pages": [
-                            "rediq/training-resources/online-training-courses"
                         ]
                     },
                     {
                         "group": "valuationIQ",
                         "pages": [
                             {
-                                "group": "about",
+                                "group": "About",
                                 "pages": [
                                     "rediq/valuationIQ/about/what-is-the-valuation-model",
                                     "rediq/valuationIQ/about/generating-a-model"
                                 ]
                             },
                             {
-                                "group": "how-to-use-the-model",
+                                "group": "How to Use the Model",
                                 "pages": [
                                     "rediq/valuationIQ/how-to-use-the-model/advanced-loan-calcs-overview",
                                     "rediq/valuationIQ/how-to-use-the-model/update-sensitivities-analysis",
@@ -438,12 +388,62 @@
                                 ]
                             },
                             {
-                                "group": "troubleshooting",
+                                "group": "Troubleshooting",
                                 "pages": [
                                     "rediq/valuationIQ/troubleshooting/blocked-macros-in-valuationiq-model",
                                     "rediq/valuationIQ/troubleshooting/considerations-for-models-downloaded-before-914202"
                                 ]
                             }
+                        ]
+                    },
+                    {
+                        "group": "QuickSync",
+                        "pages": [
+                            {
+                                "group": "Getting Started",
+                                "pages": [
+                                    "rediq/QuickSync/getting-started/data-elements-available-via-the-add-in",
+                                    "rediq/QuickSync/getting-started/getting-started",
+                                    "rediq/QuickSync/getting-started/installation-methods",
+                                    "rediq/QuickSync/getting-started/compatibility",
+                                    "rediq/QuickSync/getting-started/quicksync-2-way-sync",
+                                    "rediq/QuickSync/getting-started/quicksync-set-up-guide",
+                                    "rediq/QuickSync/getting-started/how-to-add-edit-and-delete-named-ranges"
+                                ]
+                            },
+                            {
+                                "group": "Rent Roll",
+                                "pages": [
+                                    "rediq/QuickSync/rent-roll/rent-roll"
+                                ]
+                            },
+                            {
+                                "group": "Best Practices and Tips",
+                                "pages": [
+                                    "rediq/QuickSync/best-practices-and-tips/best-practices-and-tips",
+                                    "rediq/QuickSync/best-practices-and-tips/fix-retrieve-data-error",
+                                    "rediq/QuickSync/best-practices-and-tips/2-way-sync-faq"
+                                ]
+                            },
+                            {
+                                "group": "Video Tutorials",
+                                "pages": [
+                                    "rediq/QuickSync/video-tutorials/quicksync-mapping"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "group": "Training Resources",
+                        "pages": [
+                            "rediq/training-resources/online-training-courses"
+                        ]
+                    },
+                    {
+                        "group": "Contacting Support",
+                        "pages": [
+                            "rediq/contacting-support/contact-us-by-phone-or-email",
+                            "rediq/contacting-support/holidays-and-closures"
                         ]
                     }
                 ]
