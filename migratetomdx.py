@@ -451,7 +451,9 @@ class MintlifyMigrator:
         
         # Generate file path
         product = metadata.get('product', 'general').lower()
-        category = self._sanitize_path(metadata.get('category', 'uncategorized'))
+        # Prefer explicit category; if missing/null, use section; else general
+        preferred_category = metadata.get('category') or metadata.get('section') or 'general'
+        category = self._sanitize_path(preferred_category)
         section = metadata.get('section')
         
         if section:
@@ -468,6 +470,8 @@ class MintlifyMigrator:
         
         # Convert media references
         mdx = self._convert_media_references(mdx, metadata)
+        # Convert article references to Mintlify root-relative links
+        mdx = self._convert_article_references(mdx)
         
         # Add Mintlify components
         mdx = self._enhance_with_components(mdx)
@@ -517,6 +521,90 @@ class MintlifyMigrator:
             flags=re.MULTILINE
         )
         
+        return content
+
+    def _compute_path_from_manifest_item(self, item: Dict) -> Optional[str]:
+        """Compute output MDX path (without leading slash) for a manifest item."""
+        try:
+            product = (item.get('product') or 'general').lower()
+            preferred_category = item.get('category') or item.get('section') or 'general'
+            category = self._sanitize_path(str(preferred_category))
+            section = item.get('section')
+            filename = self._generate_filename(item.get('title') or 'untitled')
+            if section:
+                return f"{product}/{category}/{self._sanitize_path(section)}/{filename}"
+            return f"{product}/{category}/{filename}"
+        except Exception:
+            return None
+
+    def _convert_article_references(self, content: str) -> str:
+        """Convert references to other articles into Mintlify root-relative links.
+
+        Handles:
+        - {{article:kb/articles/slug [12345].md}}
+        - Markdown links to kb/articles/*.md
+        - Zendesk /hc/*/articles/<id> links
+        """
+        def path_from_numeric_id(numeric_id: str) -> Optional[str]:
+            item = self.manifest_by_numeric_id.get(str(numeric_id))
+            if not item:
+                return None
+            return self._compute_path_from_manifest_item(item)
+
+        def path_from_slug(slug: str) -> Optional[str]:
+            item = self.manifest_by_slug.get(slug)
+            if not item:
+                return None
+            return self._compute_path_from_manifest_item(item)
+
+        # {{article:...}}
+        def replace_standardized(match):
+            ref = match.group(1)
+            # Try numeric id in [id]
+            id_match = re.search(r"\[(\d+)\]", ref)
+            out_path = None
+            if id_match:
+                out_path = path_from_numeric_id(id_match.group(1))
+            if not out_path:
+                # Try slug before [
+                m = re.match(r"(.+?) \[\d+\]\.md$", ref)
+                if m:
+                    out_path = path_from_slug(m.group(1))
+            if not out_path:
+                return match.group(0)
+            return f"[{os.path.basename(out_path)}](/" + out_path + ")"
+
+        content = re.sub(r"\{\{article:([^}]+)\}\}", replace_standardized, content)
+
+        # Markdown links to kb/articles/*.md
+        def replace_kb_articles_link(match):
+            text = match.group(1)
+            target = match.group(2)
+            id_match = re.search(r"\[(\d+)\]\.md$", target)
+            out_path = None
+            if id_match:
+                out_path = path_from_numeric_id(id_match.group(1))
+            if not out_path:
+                m = re.match(r"kb/articles/(.+?) \[\d+\]\.md$", target)
+                if m:
+                    out_path = path_from_slug(m.group(1))
+            if out_path:
+                return f"[{text}](/" + out_path + ")"
+            return match.group(0)
+
+        content = re.sub(r"\[([^\]]+)\]\((?:https?://[^)]*/)?kb/articles/[^)]+\)", replace_kb_articles_link, content)
+
+        # Zendesk article URLs
+        def replace_zendesk_link(match):
+            text = match.group(1)
+            article_id = match.group(2)
+            out_path = path_from_numeric_id(article_id)
+            if out_path:
+                return f"[{text}](/" + out_path + ")"
+            return match.group(0)
+
+        content = re.sub(r"\[([^\]]+)\]\([^)]*/articles/(\d+)[^)]*\)", replace_zendesk_link, content)
+
         return content
 
     def _enhance_with_components(self, content: str) -> str:
@@ -632,6 +720,9 @@ class MintlifyMigrator:
 
                 filename = media_id.split('/')[-1]
                 local_path = self.output_dir / 'images' / product / filename
+                # Skip if already downloaded
+                if local_path.exists():
+                    continue
                 local_path.parent.mkdir(parents=True, exist_ok=True)
 
                 try:
@@ -668,6 +759,7 @@ class MintlifyMigrator:
         
         config = {
             "$schema": "https://mintlify.com/schema.json",
+            "theme": "mint",
             "name": "Documentation",
             "logo": {
                 "dark": "/logo/dark.svg",
@@ -677,11 +769,7 @@ class MintlifyMigrator:
             "colors": {
                 "primary": "#0D9373",
                 "light": "#07C983",
-                "dark": "#0D9373",
-                "anchors": {
-                    "from": "#0D9373",
-                    "to": "#07C983"
-                }
+                "dark": "#0D9373"
             },
             "topbarLinks": [
                 {
@@ -693,17 +781,10 @@ class MintlifyMigrator:
                 "name": "Dashboard",
                 "url": "https://dashboard.example.com"
             },
-            "tabs": [
-                {
-                    "name": "Radix",
-                    "url": "radix"
-                },
-                {
-                    "name": "Rediq",
-                    "url": "rediq"
-                }
-            ],
-            "navigation": []
+            "navigation": {"tabs": [
+                {"tab": "Radix", "groups": []},
+                {"tab": "redIQ", "groups": []}
+            ]}
         }
         
         # Build navigation for each product
@@ -719,7 +800,8 @@ class MintlifyMigrator:
                 if 'file_path' not in article_data:
                     continue
                 
-                category = article_data['metadata'].get('category', 'uncategorized')
+                # Prefer category; fall back to section; then general
+                category = article_data['metadata'].get('category') or article_data['metadata'].get('section') or 'general'
                 
                 if category not in categories:
                     categories[category] = []
@@ -751,10 +833,11 @@ class MintlifyMigrator:
             
             # Add to navigation if there are groups
             if product_groups:
-                config['navigation'].extend(product_groups)
+                tab_index = 0 if product == 'radix' else 1
+                config['navigation']['tabs'][tab_index]['groups'].extend(product_groups)
         
         # Add introduction at the beginning
-        config['navigation'].insert(0, {
+        config['navigation']['tabs'][0]['groups'].insert(0, {
             "group": "Getting Started",
             "pages": ["index"]
         })
@@ -764,7 +847,8 @@ class MintlifyMigrator:
         with open(docs_json_path, 'w', encoding='utf-8') as f:
             json.dump(config, f, indent=2, ensure_ascii=False)
         
-        print(f"  ✓ Generated docs.json with {len(config['navigation'])} groups")
+        total_groups = sum(len(t['groups']) for t in config['navigation']['tabs'])
+        print(f"  ✓ Generated docs.json with {total_groups} groups across {len(config['navigation']['tabs'])} tabs")
 
     def create_index_page(self):
         """Create the main index.mdx page"""
