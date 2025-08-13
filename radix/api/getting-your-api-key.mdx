@@ -1,65 +1,48 @@
 ---
-description: An API key will be necessary to unlock the API your organization has
-  purchased This API key will be utilized by your organization to generate the token
-  used ...
-title: Getting Your API Key
+description: "An API key will be necessary to unlock the API your organization has purchased This API key will be utilized by your organization to generate the token used ..."
+title: "Getting Your API Key"
 ---
 
 An API key will be necessary to unlock the API your organization has purchased. This API key will be utilized by your organization to generate the token used to make authenticated calls. 
 
-
 #### Accessing Your API Key
-
 
 Our **Data API feature** will allow users within your organization to generate an API key, replace an existing key with a new one, and view a list of all users within your organization with access to the API key. 
 
-
 To access the Data API feature:
 
+- Select _Data API_ from the main dropdown menu
 
-* Select *Data API* from the main dropdown menu![API](/images/radix/2c52e795568059293c9920a4861bc18e48e66e24.png)
+  ![API](/images/radix/2c52e795568059293c9920a4861bc18e48e66e24.png)
+- A new window will appear - from this window, you can view and/or generate an API key. 
 
-
-* A new window will appear - from this window, you can view and/or generate an API key. ![Data](/images/radix/5631c886584f0eb94f7c0308020737942576bce9.png)
-
-
+  ![Data](/images/radix/5631c886584f0eb94f7c0308020737942576bce9.png)
 
 **Note:** Access to the API key is granted to specific users within your organization. If a user with access to the API key is deactivated from the system, they will no longer have access to the API key. However, it is recommended that the remaining users with API access regenerate and reimplement an API Key. This can help safeguard your data and prevent any unauthorized access by the deactivated user.
 
-
-
 You will use the Client ID and API key during the authentication process outlined below. 
-
 
 #### Authentication
 
-
 The API uses JWT tokens for the authorization of requests. You can generate your token by calling the endpoint below. 
-
 
 **Endpoint:**
 
-
-* **POST** api.radix.com/auth
-
+- `POST api.radix.com/auth`
 
 **Payload Schema:**
 
-
-
-```
+```json
 {
   "client_id": String,
   "client_secret": String
 }
 ```
 
-* **client\_id:** Input the value found under Client ID
-* **client\_secret:** Input the value found under API key
+- **client_id:** Input the value found under Client ID
+- **client_secret:** Input the value found under API key
 
-
-
-```
+```bash
 curl --request POST \
   --url https://api.radix.com/auth \
   --header 'Content-Type: application/json' \
