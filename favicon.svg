@@ -1,19 +1,15 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.06145 23.1079C5.26816 22.3769 -3.39077 20.6274 1.4173 5.06384C9.6344 6.09939 16.9728 14.0644 9.06145 23.1079Z" fill="url(#paint0_linear_17557_2021)"/>
-<path d="M8.91928 23.0939C5.27642 21.2223 0.78371 4.20891 17.0071 0C20.7569 7.19341 19.6212 16.5452 8.91928 23.0939Z" fill="url(#paint1_linear_17557_2021)"/>
-<path d="M8.91388 23.0788C8.73534 19.8817 10.1585 9.08525 23.5699 13.1107C23.1812 20.1229 18.984 26.4182 8.91388 23.0788Z" fill="url(#paint2_linear_17557_2021)"/>
-<defs>
-<linearGradient id="paint0_linear_17557_2021" x1="3.77557" y1="5.91571" x2="5.23185" y2="21.5589" gradientUnits="userSpaceOnUse">
-<stop stop-color="#18E299"/>
-<stop offset="1" stop-color="#15803D"/>
-</linearGradient>
-<linearGradient id="paint1_linear_17557_2021" x1="12.1711" y1="-0.718425" x2="10.1897" y2="22.9832" gradientUnits="userSpaceOnUse">
-<stop stop-color="#16A34A"/>
-<stop offset="1" stop-color="#4ADE80"/>
-</linearGradient>
-<linearGradient id="paint2_linear_17557_2021" x1="23.1327" y1="15.353" x2="9.33841" y2="18.5196" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4ADE80"/>
-<stop offset="1" stop-color="#0D9373"/>
-</linearGradient>
-</defs>
-</svg>
+<svg width="32" height="32" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip0_637_805)">
+      <path d="M32.5564 13H8L35.7414 48.4752L47.9993 32.7771L32.5564 13Z" fill="#008CD5"/>
+      <path d="M88 13H63.4436L47.9994 32.7771L60.2586 48.4752L88 13Z" fill="#7AC943"/>
+      <path d="M60.2088 48.5379L60.2586 48.4752L47.9994 32.7771L35.7415 48.4752L35.7899 48.5379H60.2088Z" fill="#00B480"/>
+      <path d="M64.8691 54.3788L60.3071 48.5379H60.2088L47.9994 64.1511L55.5774 73.8424L63.5209 84H88L64.8691 54.3788Z" fill="#008CD5"/>
+      <path d="M35.7899 48.5379H35.6917L31.131 54.3788L8 84H32.4791L40.4213 73.8424L47.9993 64.1511L35.7899 48.5379Z" fill="#7AC943"/>
+      <path d="M47.9993 64.1511L60.2088 48.5379H35.7899L47.9993 64.1511Z" fill="#0076B480"/>
+    </g>
+    <defs>
+      <clipPath id="clip0_637_805">
+        <rect width="80" height="71" fill="white" transform="translate(8 13)"/>
+      </clipPath>
+    </defs>
+  </svg>
