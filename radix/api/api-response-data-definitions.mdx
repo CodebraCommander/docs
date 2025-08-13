@@ -1,184 +1,80 @@
 ---
-description: 'propertyId
-
-  Unique Radix Subject Property ID
-
-  organizationId
-
-  Unique Radix Organization ID
-
-  subjectAverage
-
-  address
-
-  Subject Property  Address
-
-  atrPercentage
-
-  Subjec...'
-sidebarTitle: "API Response Data..."
 title: API Response Data Definitions
+sidebarTitle: "API Response Data..."
+description: Glossary of Radix API response fields with clear definitions and groupings.
 ---
 
-"propertyId":
-Unique Radix Subject Property ID
-"organizationId":
-Unique Radix Organization ID
-"subjectAverage":
-"address":
-Subject Property - Address
-"atrPercentage":
-Subject Property - Available to Rent Percentage
-"city":
-Subject Property - City
-"construction":
-Subject Property - Construction Type
-"contactEmail":
-Subject Property - Contact Email
-"contactName":
-Subject Property - Contact Name
-"googleRating":
-Subject Property - Google Rating
-"googleReviewCount":
-Subject Property - Number of Google Reviews
-"leasedPercentage":
-Subject Property - Leased %
-"leases":
-Subject Property - Number of approved leases in the last 7 days after cancellations and denials. (Net Leases)
-"management":
-Subject Property - Management Organization
-"marketRent":
-Subject Property - Weighted Average Rent
-"msa":
-Subject Property - MSA
-"nerSqft":
-Subject Property - Net Effective Rent/SF (NER divided by SqFt)
-"ner":
-Subject Property - Weighted Average Net Effective Rent.
-"occupancyPercentage":
-Subject Property - Occupancy Percentage
-"owner":
-Subject Property - Ownership Group
-"property":
-Subject Property - Property Name
-"sqft":
-Subject Property - Weighted Average Unit Square Footage
-"state":
-Subject Property - State
-"submarket":
-Subject Property - Submarket
-"totalConcessions":
-Subject Property - The weighted sum of both one-time and recurring concessions offered over a 12-month period
-"traffic":
-Subject Property - Number of Tours/Shows giving in the last 7 days
-"units":
-Subject Property - Total Number of Units
-"website":
-Subject Property - Website
-"yearBuild":
-Subject Property - Year Built
-"yelpRating":
-Subject Property - Yelp Rating
-"yelpRatingViewCount":
-Subject Property - Number of Yelp Reviews
-"zipCode":
-Subject Property - Zip Code
-"floorplanLevel":
-Subject Property - Floor Plan level detail
-"bedrooms":
-Subject Property - Number of Bedrooms
-"bathrooms":
-Subject Property - Number of Bathrooms
-"description":
-Subject Property - Floor Plan Description
-"code":
-Subject Property - Floor Plan Description from PMS
-"units":
-Subject Property - Floor Plan Number of Units
-"sqft":
-Subject Property - Floor Plan Square Footage
- "rent":
-Subject Property - Floor Plan Rent
-"rentSqft":
-Subject Property - Floor Plan Rent/Square Foot
-"ner":
-Subject Property - Floor Plan Net Eff Effective Rent
+This page lists the fields you may see in Radix API responses and what each field means. Keys are shown as they appear in JSON. Use the Scope column to understand where the value applies (for example, the subject property, a compset average, or a floor plan).
 
+| Key | Scope | Description |
+| --- | --- | --- |
+| `propertyId` | Top-level meta | Unique Radix Subject Property ID |
+| `organizationId` | Top-level meta | Unique Radix Organization ID |
+| `createdAt` | Top-level meta | The date/time the API response was created |
+| `createdAt.$date` | Top-level meta | Date of the API call/response (ISO timestamp) |
+| `address` | Subject property | Property address |
+| `atrPercentage` | Subject property | Available to Rent percentage (ATR) |
+| `city` | Subject property | City |
+| `construction` | Subject property | Construction type |
+| `contactEmail` | Subject property | Contact email |
+| `contactName` | Subject property | Contact name |
+| `googleRating` | Subject property | Google rating |
+| `googleReviewCount` | Subject property | Number of Google reviews |
+| `leasedPercentage` | Subject property | Leased percentage |
+| `leases` | Subject property | Approved leases in the last 7 days after cancellations and denials (net leases) |
+| `management` | Subject property | Management organization |
+| `marketRent` | Subject property | Weighted average rent |
+| `msa` | Subject property | Metropolitan Statistical Area (MSA) |
+| `ner` | Subject property | Weighted average Net Effective Rent (NER) |
+| `nerSqft` | Subject property | Net Effective Rent per square foot (NER ÷ SqFt) |
+| `occupancyPercentage` | Subject property | Occupancy percentage |
+| `owner` | Subject property | Ownership group |
+| `property` | Subject property | Property name |
+| `sqft` | Subject property | Weighted average unit square footage |
+| `state` | Subject property | State |
+| `submarket` | Subject property | Submarket |
+| `totalConcessions` | Subject property | Weighted sum of one-time and recurring concessions over a 12-month period |
+| `traffic` | Subject property | Tours/shows in the last 7 days |
+| `units` | Subject property | Total number of units |
+| `website` | Subject property | Website URL |
+| `yearBuild` | Subject property | Year built |
+| `yelpRating` | Subject property | Yelp rating |
+| `yelpRatingViewCount` | Subject property | Number of Yelp reviews |
+| `zipCode` | Subject property | Zip/Postal code |
+| `floorplanLevel` | Floor plan | Indicates floor plan–level details follow |
+| `bedrooms` | Floor plan | Number of bedrooms in the floor plan |
+| `bathrooms` | Floor plan | Number of bathrooms in the floor plan |
+| `description` | Floor plan | Floor plan description |
+| `code` | Floor plan | Floor plan code (from PMS) |
+| `units` | Floor plan | Number of units for the floor plan |
+| `sqft` | Floor plan | Floor plan square footage |
+| `rent` | Floor plan | Floor plan rent |
+| `rentSqft` | Floor plan | Floor plan rent per square foot |
+| `ner` | Floor plan | Floor plan net effective rent |
+| `compsAverage` | Compset average | Indicates compset average metrics follow |
+| `leases` | Compset average | Average approved leases in the last 7 days after cancellations and denials (net leases) |
+| `traffic` | Compset average | Average tours/shows in the last 7 days |
+| `nerSqft` | Compset average | Weighted average NER per square foot |
+| `ner` | Compset average | Weighted average net effective rent |
+| `totalConcessions` | Compset average | Weighted sum of concessions over a 12‑month period across the compset |
+| `sqft` | Compset average | Weighted average unit square footage |
+| `subjectAverageByUnitType` | Subject by unit type | Indicates subject metrics broken out by unit type follow |
+| `bedrooms` | Subject by unit type | Number of bedrooms for the unit type |
+| `ner` | Subject by unit type | Weighted average net effective rent for the unit type |
+| `nerSqft` | Subject by unit type | Weighted average NER per square foot for the unit type |
+| `sqft` | Subject by unit type | Weighted average unit square footage for the unit type |
+| `atrPercentage` | Subject by unit type | Percentage of available apartments to rent for the unit type |
+| `totalConcessions` | Subject by unit type | Weighted sum of concessions over a 12‑month period for the unit type |
+| `rent` | Subject by unit type | Weighted average rent for the unit type |
+| `compsAverageByUnitType` | Compset by unit type | Indicates compset metrics broken out by unit type follow |
+| `bedrooms` | Compset by unit type | Number of bedrooms for the unit type |
+| `ner` | Compset by unit type | Weighted average net effective rent for the unit type |
+| `nerSqft` | Compset by unit type | Weighted average NER per square foot for the unit type |
+| `sqft` | Compset by unit type | Weighted average unit square footage for the unit type |
+| `atrPercentage` | Compset by unit type | Percentage of available apartments to rent for the unit type |
+| `totalConcessions` | Compset by unit type | Weighted sum of concessions over a 12‑month period for the unit type |
 
-"compsAverage":
+Notes
 
-"leases":
-Compset - Average Number of Approved Leases in the Last 7 Days After Cancellations and Denials (net leases.)
-"traffic":
-Compset - Average Number of Tours/Shows given in the last 7 days.
-"nerSqft":
-Compset - Weighted Average NER per Square Foot
-"ner":
-Compset - Weighted Average Net Effective Rent
-"totalConcessions":
-Compset - The weighted sum of both one-time and recurring concessions offered over a 12-month period across the compset
-"sqft":
-Compset - Weighted Average Unit Square Footage
-"subjectAverageByUnitType":
-
-"bedrooms":
-Subject Property - Number of Bedrooms
-"ner":
-Subject Property - Weighted Average Net Effective Rent
-"nerSqft":
-Subject Property - Weighted Average Net Effective Rent per Square Foot
-"sqft":
-Subject Property - Weighted Average Unit Square Footage
-"atrPercentage":
-Subject Property - The percentage of avaliable appartments to rent for the given number of bedroom in the subject property
-"totalConcessions":
-Subject Property - The weighted sum of both one-time and recurring concessions offered over a 12-month period for the given bedroom type in the subject property
-"rent":
-Subject Property - Weighted Average Rent
-"bedrooms":
-Subject Property - Number of Bedrooms
-"ner":
-Subject Property - Weighted Average Net Effective Rent
-"nerSqft":
-Subject Property - Weighted Average Net Effective Rent per Square Foot
-"sqft":
-Subject Property - Weighted Average Unit Square Footage
-"atrPercentage":
-Subject Property - The percentage of avaliable appartments to rent for the given number of bedroom in the subject property
-"totalConcessions":
-Subject Property - The weighted sum of both one-time and recurring concessions offered over a 12-month period for the given bedroom type in the subject property
-"rent":
-Subject Property - Weighted Average Rent
-"bedrooms":
-Subject Property - Number of Bedrooms
-"ner":
-Subject Property - Weighted Average Net Effective Rent
-"nerSqft":
-Subject Property - Weighted Average Net Effective Rent per Square Foot
-"sqft":
-Subject Property - Weighted Average Unit Square Footage
-"atrPercentage":
-Subject Property - The percentage of available apartments to rent for the given number of bedrooms in the subject property
-"totalConcessions":
-Subject Property - The weighted sum of both one-time and recurring concessions offered over a 12-month period for the given bedroom type in the subject property
-"rent":
-Subject Property - Weighted Average Rent
-"compsAverageByUnitType":
-
-"bedrooms":
-Compset - Number of Bedooms
-"ner":
-Compset - Weighted Average Net Effective Rent
-"nerSqft":
-Compset - Weighted Average Net Effective Rent per Square Foot
-"sqft":
-Compset - Weighted Average Unit Square Footage
-"atrPercentage":
-Compset - The percentage of available apartments to rent for the given number of bedroom in the compset
-"totalConcessions":
-Compset - The weighted sum of both one-time and recurring concessions offered over a 12-month period for the given bedroom type in the compset
-
-"createdAt":
-The date the API response was created
-"$date":
-Date of Call/Response
+- Values with the same key name can appear in different scopes (for example, `ner` at the subject level vs. within a floor plan or compset). Use Scope to interpret the context.
+- Some responses include arrays for unit types; the fields listed under “by unit type” repeat per unit type (e.g., studio, 1BR, 2BR).
