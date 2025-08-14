@@ -1,3 +1,6 @@
 migratetomdx.py
 add_sidebar_titles.py
 audit_sidebar_titles.py
+nest_navigation.py
+order_navigation.py
+format_groups.py
