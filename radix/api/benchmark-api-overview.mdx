@@ -1,35 +1,22 @@
 ---
-description: The Benchmark API returns data for your subject properties and the competitor
-  properties youve selected for them within Benchmark In order to leverage this A...
-title: Benchmark API Overview
+description: "The Benchmark API returns data for your subject properties and the competitor properties youve selected for them within Benchmark In order to leverage this A..."
+title: "Benchmark API Overview"
 ---
 
-The Benchmark API returns data for your subject properties and the competitor properties you've selected for them within Benchmark. In order to leverage this API, you will need to create a unique token. You can follow the instructions on how to do so by reviewing our [Getting Your API Key](kb://article/zendesk:radix:17014663521037) resource. 
+The Benchmark API returns data for your subject properties and the competitor properties you've selected for them within Benchmark. In order to leverage this API, you will need to create a unique token. You can follow the instructions on how to do so by reviewing our [Getting Your API Key](/radix/api/getting-your-api-key) resource.
 
-
-HTTP Request
-------------
-
+## HTTP Request
 
 Benchmark API data can be retrieved from the following endpoint:
 
-
-
 **Endpoint:**
 
+- **GET** api.radix.com/export
 
-* **GET** api.radix.com/export
+## Headers
 
-
-
-Headers
--------
-
-
-+ x-radix-version: 1.0.0
-+ Authorization: Bearer &lt;Access Token&gt;
-
-
+- x-radix-version: 1.0.0
+- Authorization: Bearer \<Access Token\>
 
 ```
 curl --request GET \
@@ -40,10 +27,7 @@ curl --request GET \
 
 **Sample Response:**
 
-
 For a complete list of definitions for all data responses, [click here.](kb://article/zendesk:radix:17703147105421)
-
-
 
 ```
 {
@@ -201,9 +185,8 @@ For a complete list of definitions for all data responses, [click here.](kb://ar
 }
 ```
 
-Response Codes
---------------
+## Response Codes
 
-| Code | Definition |
-| --- | --- |
+| Code    | Definition                                                                                                                           |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | **200** | **OK** Successfully returned response. The response message varies, depending on the request method/endpoint and the requested data. |
