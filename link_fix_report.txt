@@ -1,0 +1,51 @@
+=== LINK FIX REPORT ===
+
+Files processed: 239
+Files modified: 0
+Total links fixed: 0
+
+=== UNFOUND FILES ===
+  property-benchmark-snapshot-video: 8 references
+  property-benchmark-trends-video: 8 references
+  property-benchmark-reputation-map-video: 3 references
+  property-management-system-pms-integration-overview: 2 references
+  rent-and-operating-trends-video: 2 references
+  standardizing-reporting-with-an-organization-template: 1 references
+  property-benchmark-competitors-table-video: 1 references
+  understanding-verified-and-not-verified-property-status-on-realrents: 1 references
+  how-to-upload-and-manage-property-photos-in-realrents: 1 references
+  how-to-add-and-manage-fees-and-deposits-in-realrents: 1 references
+  radix-research-field-definitions-calculation-methodology: 1 references
+  how-to-save-and-print-as-pdf-in-valuationiq-for-mac: 1 references
+
+=== UNFOUND ARTICLE IDs ===
+  zendesk:radix:10742125736589
+  zendesk:radix:15328580922637
+  zendesk:radix:35688856674445
+  zendesk:radix:38096525453581
+  zendesk:radix:38333220457229
+  zendesk:radix:7654585462285
+  zendesk:radix:9059786734733
+  zendesk:radix:9060091043981
+  zendesk:radix:9060097289101
+  zendesk:radix:9060154685965
+  zendesk:rediq:37756528602644
+  zendesk:rediq:38807668463764
+
+=== UNMAPPED ARTICLE IDs ===
+  zendesk:radix:15009854173069
+  zendesk:radix:27994992281869
+  zendesk:radix:28429466699533
+  zendesk:radix:32826267937933
+  zendesk:radix:32860114535693
+  zendesk:radix:37551597222029
+  zendesk:radix:7311719344781
+  zendesk:radix:9148660154765
+  zendesk:radix:9148961513357
+  zendesk:radix:9149064875661
+  zendesk:radix:9287035348365
+  zendesk:rediq:360039768892
+  zendesk:rediq:360040555431
+  zendesk:rediq:360041475092
+  zendesk:rediq:360049898411
+  zendesk:rediq:360049900111
