@@ -1,26 +1,20 @@
 ---
-description: The Recent Lease Analysis appears on the Floor Plan Summary This report
-  shows the last  days of leasing as well as the most recent x number of leases Filters...
-title: Recent Lease Analysis
+description: "The Recent Lease Analysis appears on the Floor Plan Summary This report shows the last  days of leasing as well as the most recent x number of leases Filters..."
+title: "Recent Lease Analysis"
 ---
 
-The Recent Lease Analysis appears on the Floor Plan Summary. This report shows the last 30/60/90 days of leasing as well as the most recent *x* number of leases. Filters for the Recent Lease Analysis appear in the Report Settings on the left side of the screen.
-
+The Recent Lease Analysis appears on the Floor Plan Summary. This report shows the last 30/60/90 days of leasing as well as the most recent _x_ number of leases. Filters for the Recent Lease Analysis appear in the Report Settings on the left side of the screen.
 
 <Frame caption="Rent roll report displaying unit information, market rents, occupancy status, and recent leases.">
-  <img src="/images/rediq/c64c5615d33ab5291d489f3f6225a0b09ce023a0.png" alt="Recent Lease Analysis.png" />
+  ![Recent Lease Analysis.png](/images/rediq/c64c5615d33ab5291d489f3f6225a0b09ce023a0.png)
 </Frame>
 
-
-If a Rent Roll has both Lease Start Dates and Move-in Dates, redIQ will default to using the Lease Start Date for pulling data into the Recent Lease Analysis. If your Rent Roll includes any “anomalies” in the Lease Start Dates, then the system will elect to use Move In Dates for the Recent Lease Analysis, even when Lease Start Dates are present. Resolve these anomalies and the system will then revert to using Lease Start Dates. If an occupied unit is missing move in or lease start date, then the Recent Lease Analysis will not appear. To get the analysis to appear, either fill in the missing date for this unit or mark the unit as vacant on the [Edit Rent Roll screen](https://rediq.freshdesk.com/support/solutions/articles/5000742265-edit-rent-roll-screen). 
-
+If a Rent Roll has both Lease Start Dates and Move-in Dates, redIQ will default to using the Lease Start Date for pulling data into the Recent Lease Analysis. If your Rent Roll includes any “anomalies” in the Lease Start Dates, then the system will elect to use Move In Dates for the Recent Lease Analysis, even when Lease Start Dates are present. Resolve these anomalies and the system will then revert to using Lease Start Dates. If an occupied unit is missing move in or lease start date, then the Recent Lease Analysis will not appear. To get the analysis to appear, either fill in the missing date for this unit or mark the unit as vacant on the [Edit Rent Roll screen](/rediq/dataIQ/rent-rolls/edit-rent-roll-screen-anomalies). 
 
 The totals in the Recent Lease Analysis represent market rent based on recently achieved in-place rents. These averages are weighted by the total number of units with each floor plan to account for the property's unit mix. When a floor plan does not have a recent lease, its reported market rent is used in the calculation. The thought process behind this calculation is that the number represents what the property will look like if every unit were rented at the rate of the recent leases. A simple average would not account for the property's unit mix and would be skewed if there were a large or small number of a certain floor plan.
 
-
 The number of leases included in any calculation is provided next to the rent. If more leases are included than what is selected on the slider bar, then there are multiple leases that started on the same day. Since there is no way to determine which one is more recent, it includes all of them in the average. If less leases are included, then the number of leases selected for the analysis is greater than the number of occupied units for that floor plan.
 
-
 <Frame caption="Recent leases settings for rent roll report, including lease count and future lease options.">
-  <img src="/images/rediq/b1e6768d52cbd217cd0e246bb01c8a4c8fcb3f75.png" alt="Recent Lease Analysis 2.PNG" />
+  ![Recent Lease Analysis 2.PNG](/images/rediq/b1e6768d52cbd217cd0e246bb01c8a4c8fcb3f75.png)
 </Frame>
